@@ -69,3 +69,13 @@ Les administrateurs pourront:
 | Gérer les membres                            |         |        |               |          | X              |
 | Contacter le cinéma par email                |         | X      | X             | X        | X              |
 | Se déconnecter                               |         | X      | X             | X        | X              |
+
+## Stratégie de tests
+
+### Qui ?
+
+Les premier testeurs seront les membres de l'équipe. Puis nous demanderons un accès au server SwissCenter du CPNV pour pouvoir héberger le site "foncionnel". Nous essayerons de faire tester le site a un maximum de personnes en commancant par nos camarades de classes.
+
+### Comment ?
+
+Les testeur qui seront dans la classe utiliseront des PC dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et utiliseront leurs matériel. Le but étant que les testeurs puisse essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou firefox.
