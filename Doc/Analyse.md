@@ -4,6 +4,10 @@
 
 Ce site web aura pour but de gérer les commandes de billets pour un cinéma.
 
+## Contexte
+
+## Organisation
+
 ## Objectifs
 
 ### Cas d'utilisation
@@ -47,8 +51,8 @@ Les administrateurs pourront:
 * Gérer les membres
 * Se déconnecter
 
-
 ## Tableau de possibilité
+
 |                                              | anonyme | client | client fidèle | personel | administrateur |
 | -------------------------------------------- | ------- | ------ | ------------- | -------- | -------------- |
 | Voir les films disponibles                   | X       | X      | X             | X        | X              |
@@ -70,6 +74,8 @@ Les administrateurs pourront:
 | Contacter le cinéma par email                |         | X      | X             | X        | X              |
 | Se déconnecter                               |         | X      | X             | X        | X              |
 
+## Planification initiale
+
 ## Stratégie de tests
 
 ### Qui ?
@@ -79,3 +85,23 @@ Les premier testeurs seront les membres de l'équipe. Puis nous demanderons un a
 ### Comment ?
 
 Les testeur qui seront dans la classe utiliseront des PC dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et utiliseront leurs matériel. Le but étant que les testeurs puisse essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou firefox.
+
+## Analyse des risques
+
+## Journal de bord
+
+## Bilan des objectifs
+
+### Atteints
+
+### Non-atteints
+
+## Bilan des points
+
+### Positif
+
+### Négatif
+
+### Difficultés
+
+### Suites possibles
