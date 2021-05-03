@@ -88,6 +88,10 @@ Les testeur qui seront dans la classe utiliseront des PC dell avec google chrome
 
 ## Analyse des risques
 
+## Analyse concurrentielle
+
+Nos plus gros concurent dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En obsérvant leurs sites pathé ont des films mit en avant, une fonctionalité intéréssante. Et cineman mettent toutes les bandes-annonces au même endroit.
+
 ## Journal de bord
 
 ## Bilan des objectifs
