@@ -11,7 +11,7 @@
 session_start();
 
 // Dependencies
-require_once "conrtoller/nav.php";
+require_once "controller/nav.php";
 
 // Routing
 switch (strtok($_SERVER["REQUEST_URI"], '?')) {
