@@ -12,20 +12,20 @@ Ce site web aura pour but de gérer les commandes de billets pour un cinéma.
 
 ### Cas d'utilisation
 
-Il y'aura plusieurs type de comptes tels que:
+Il y'aura plusieurs types de comptes tels que:
 
 * Administrateur
 * Personnel(employé du cinéma)
 * Client
 * Client fidèle
 
-Les utilisateurs anonyme pourront:
+Les utilisateurs anonymes pourront:
 
-* Voir les différents films disponible. 
+* Voir les différents films disponibles. 
 * Voir les séances par jour
 * S'inscrire/se connecter
 
-Tous les comptes instrit sur le site hormis les administrateurs pourront:
+Tous les comptes instrits sur le site hormis les administrateurs pourront:
 
 * Sélectionner une scéance
 * Sélectionner un nombre de billets
@@ -35,11 +35,11 @@ Tous les comptes instrit sur le site hormis les administrateurs pourront:
 * Gérer son compte
 * Utiliser un code de rabais
 * Contacter le cinéma par email
-* Voir les différents films disponible
+* Voir les différents films disponibles
 * Voir les séances par jour
 * Se déconnecter
 
-Les comptes Clients fidèles et personnel pourront:
+Les comptes Clients fidèles et personnels pourront:
 
 * Avoir un rabais constant
 
@@ -53,26 +53,26 @@ Les administrateurs pourront:
 
 ## Tableau de possibilité
 
-|                                              | anonyme | client | client fidèle | personel | administrateur |
-| -------------------------------------------- | ------- | ------ | ------------- | -------- | -------------- |
-| Voir les films disponibles                   | X       | X      | X             | X        | X              |
-| Se connecter                                 |         | X      | X             | X        | X              |
-| S'inscrire                                   | X       |        |               |          |                |
-| Voir les scéances par jour                   | X       | X      | X             | X        | X              |
-| Sélectionner une scéance                     |         | X      | X             | X        |                |
-| Sélectionner un nombre de billets            |         | X      | X             | X        |                |
-| Voir les places disponibles dans les salle   |         | X      | X             | X        | X              |
-| Sélectionner une/des place(s)                |         | X      | X             | X        |                |
-| Passer une commande avec un retour par email |         | X      | X             | X        |                |
-| Gérer son compte                             |         | X      | X             | X        | X              |
-| Utiliser un code de rabais                   |         | X      | X             | X        |                |
-| Avoir un rabais constant                     |         |        | X             | X        |                |
-| Gérer les salles                             |         |        |               |          | X              |
-| Gérer les films                              |         |        |               |          | X              |
-| Gérer les scéances                           |         |        |               |          | X              |
-| Gérer les membres                            |         |        |               |          | X              |
-| Contacter le cinéma par email                |         | X      | X             | X        | X              |
-| Se déconnecter                               |         | X      | X             | X        | X              |
+|                                               | anonyme | client | client fidèle | personnel | administrateur |
+| --------------------------------------------  | ------- | ------ | ------------- | -------- | -------------- |
+| Voir les films disponibles                    | X       | X      | X             | X        | X              |
+| Se connecter                                  |         | X      | X             | X        | X              |
+| S'inscrire                                    | X       |        |               |          |                |
+| Voir les scéances par jour                    | X       | X      | X             | X        | X              |
+| Sélectionner une scéance                      |         | X      | X             | X        |                |
+| Sélectionner un nombre de billets             |         | X      | X             | X        |                |
+| Voir les places disponibles dans les salles   |         | X      | X             | X        | X              |
+| Sélectionner une/des place(s)                 |         | X      | X             | X        |                |
+| Passer une commande avec un retour par email  |         | X      | X             | X        |                |
+| Gérer son compte                              |         | X      | X             | X        | X              |
+| Utiliser un code de rabais                    |         | X      | X             | X        |                |
+| Avoir un rabais constant                      |         |        | X             | X        |                |
+| Gérer les salles                              |         |        |               |          | X              |
+| Gérer les films                               |         |        |               |          | X              |
+| Gérer les scéances                            |         |        |               |          | X              |
+| Gérer les membres                             |         |        |               |          | X              |
+| Contacter le cinéma par email                 |         | X      | X             | X        | X              |
+| Se déconnecter                                |         | X      | X             | X        | X              |
 
 ## Planification initiale
 
@@ -80,17 +80,17 @@ Les administrateurs pourront:
 
 ### Qui ?
 
-Les premier testeurs seront les membres de l'équipe. Puis nous demanderons un accès au server SwissCenter du CPNV pour pouvoir héberger le site "foncionnel". Nous essayerons de faire tester le site a un maximum de personnes en commancant par nos camarades de classes.
+Les premier testeurs seront les membres de l'équipe. Puis nous demanderons un accès au server SwissCenter du CPNV pour pouvoir héberger le site "foncionnel". Nous essayerons de faire tester le site a un maximum de personnes en commençant par nos camarades de classes.
 
 ### Comment ?
 
-Les testeur qui seront dans la classe utiliseront des PC dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et utiliseront leurs matériel. Le but étant que les testeurs puisse essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou firefox.
+Les testeurs qui seront dans la classe utiliseront des PC dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et utiliseront leurs matériels. Le but étant que les testeurs puissent essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou firefox.
 
 ## Analyse des risques
 
 ## Analyse concurrentielle
 
-Nos plus gros concurent dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En obsérvant leurs sites pathé ont des films mit en avant, une fonctionalité intéréssante. Et cineman mettent toutes les bandes-annonces au même endroit.
+Nos plus gros concurents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En obsérvant leurs sites pathé ont des films mis en avant, une fonctionalité intéréssante. Et cineman mettent toutes les bandes-annonces au même endroit.
 
 ## Journal de bord
 
