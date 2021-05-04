@@ -18,5 +18,15 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     
     default:
         lost();
+    break;
+    
+    case '/':
+        home();
+    break;
+    
+    case '/home':
+        home();
+    break;
 
+    
 }
