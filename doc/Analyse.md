@@ -88,6 +88,23 @@ Les testeurs qui seront dans la classe utiliseront des PC dell avec google chrom
 
 ## Analyse des risques
 
+### Risques techniques
+
+
+
+### Risques humains
+
+En cas d'absence qui ne nécessite pas d'alitement, les tâches pourront être effectuées en télétravail. Dans le cas contraire, les tâches devront être réparties par le binôme restant. Les cas les moins probables traitant de plus d'une absence devrons être discuter rapidement afin d'accumuler le moins de retard possible.
+
+### Risques juridiques
+
+Au niveau du CPNV, les risques d'une fermeture définitive de l'entreprise sont infinitésimaux. En ce qui concerne une fermeture temporaire (par exemple une période de confinement), les tâches pourront être effectuées en télétravail
+
+### Risques sur les délais
+
+
+### Risques intrinsèques à la gestion de projet 
+
 ## Analyse concurrentielle
 
 Nos plus gros concurents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En obsérvant leurs sites pathé ont des films mis en avant, une fonctionalité intéréssante. Et cineman mettent toutes les bandes-annonces au même endroit.
