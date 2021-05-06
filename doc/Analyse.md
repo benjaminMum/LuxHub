@@ -6,7 +6,11 @@ Ce site web aura pour but de gérer les commandes de billets pour un cinéma.
 
 ## Contexte
 
+Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2èmes années du CPNV. Nous devrons affirmer nos compétences de développeur tout en gérant une équipe.
+
 ## Organisation
+
+
 
 ## Objectifs
 
@@ -76,6 +80,28 @@ Les administrateurs pourront:
 
 ## Planification initiale
 
+Le projet sera réalisé en 5 sprints
+
+### Sprint 1
+
+Le premier sprint aura pour but de lancer le projet donc ne contiendra pas beaucoup de code.
+
+### Sprint 2
+
+Le deuxième sprint sera dédié à la création de la base de données et des données tests.
+
+### Sprint 3
+
+Le troisième sprint visera à mettre en place le front-end et lancera aussi le travail avec la base de données.
+
+### Sprint 4
+
+Le quatrième sprint sera dédié à la finalisation du site.
+
+### Sprint 5
+
+Le dernier sprint aura pour unique but de faire du testing et du bug fixing.
+
 ## Stratégie de tests
 
 ### Qui ?
@@ -87,6 +113,8 @@ Les premier testeurs seront les membres de l'équipe. Puis nous demanderons un a
 Les testeurs qui seront dans la classe utiliseront des PC dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et utiliseront leurs matériels. Le but étant que les testeurs puissent essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou firefox.
 
 ## Analyse des risques
+
+
 
 ### Risques techniques
 
