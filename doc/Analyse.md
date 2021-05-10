@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Ce site web aura pour but de gérer les commandes de billets pour un cinéma.
+Ce projet a pour but de créer un site internet pour "un petit cinéma". Il sera utilisé pour réserver des billets dans les différentes salles du cinéma. Il proposera aux visiteurs les films disponibles.  
 
 ## Contexte
 
-Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2èmes années du CPNV. Nous devrons affirmer nos compétences de développeur tout en gérant une équipe.
+Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2èmes années du 4ème trimestre du CPNV. Nous devrons affirmer nos compétences développée au cours des dérniers modules étudié tels que: MA-08, MA-10, ICT-101, ICT-104, ICT-105, ICT-120, ICT-306, ICT-431.
 
 ## Organisation
 
