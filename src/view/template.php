@@ -61,8 +61,8 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $fav
                         </ul>
                         <div class="col-12 col-md-8 d-flex justify-content-md-end mt-2 mt-md-0 gx-0">
                             <?php if (empty($_SESSION)) { ?>
-                                <button href="#" class="btn btn-secondary me-2">Se connecter</button>
-                                <button href="#" class="btn btn-secondary me-2">S'enregister</button>
+                                <a href="index.php?action=displayLogin" class="btn btn-secondary me-2">Se connecter</a>
+                                <a href="index.php?action=displayRegister" class="btn btn-secondary me-2">S'enregister</a>
                             <?php } else { ?>
                                 <button href="#" class="btn btn btn-secondary">Se déconnecter</button>
                             <?php } ?>
