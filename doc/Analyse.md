@@ -10,7 +10,12 @@ Ce site web est l'oeuvre principale de notre groupe de projet web avec base de d
 
 ## Organisation
 
-
+|                                               | ProductOwner | ScrumMaster | Dévelopeurs |
+| --------------------------------------------  | ------------ | ----------- | ----------- | 
+| Carrel 	Xavier                    	| X            |             |             |
+| Fontana 	Benjamin                        |              | X           | X           |
+| Muminovic 	Benjamin                        |              |             | X           |
+| Collaud 	Nathanaël                       |              |             | X           |
 
 ## Objectifs
 
@@ -58,25 +63,25 @@ Les administrateurs pourront:
 ## Tableau de possibilité
 
 |                                               | anonyme | client | client fidèle | personnel | administrateur |
-| --------------------------------------------  | ------- | ------ | ------------- | -------- | -------------- |
-| Voir les films disponibles                    | X       | X      | X             | X        | X              |
-| Se connecter                                  |         | X      | X             | X        | X              |
-| S'inscrire                                    | X       |        |               |          |                |
-| Voir les scéances par jour                    | X       | X      | X             | X        | X              |
-| Sélectionner une scéance                      |         | X      | X             | X        |                |
-| Sélectionner un nombre de billets             |         | X      | X             | X        |                |
-| Voir les places disponibles dans les salles   |         | X      | X             | X        | X              |
-| Sélectionner une/des place(s)                 |         | X      | X             | X        |                |
-| Passer une commande avec un retour par email  |         | X      | X             | X        |                |
-| Gérer son compte                              |         | X      | X             | X        | X              |
-| Utiliser un code de rabais                    |         | X      | X             | X        |                |
-| Avoir un rabais constant                      |         |        | X             | X        |                |
-| Gérer les salles                              |         |        |               |          | X              |
-| Gérer les films                               |         |        |               |          | X              |
-| Gérer les scéances                            |         |        |               |          | X              |
-| Gérer les membres                             |         |        |               |          | X              |
-| Contacter le cinéma par email                 |         | X      | X             | X        | X              |
-| Se déconnecter                                |         | X      | X             | X        | X              |
+| --------------------------------------------  | ------- | ------ | ------------- | --------  | -------------- |
+| Voir les films disponibles                    | X       | X      | X             | X         | X              |
+| Se connecter                                  |         | X      | X             | X         | X              |
+| S'inscrire                                    | X       |        |               |           |                |
+| Voir les scéances par jour                    | X       | X      | X             | X         | X              |
+| Sélectionner une scéance                      |         | X      | X             | X         |                |
+| Sélectionner un nombre de billets             |         | X      | X             | X         |                |
+| Voir les places disponibles dans les salles   |         | X      | X             | X         | X              |
+| Sélectionner une/des place(s)                 |         | X      | X             | X         |                |
+| Passer une commande avec un retour par email  |         | X      | X             | X         |                |
+| Gérer son compte                              |         | X      | X             | X         | X              |
+| Utiliser un code de rabais                    |         | X      | X             | X         |                |
+| Avoir un rabais constant                      |         |        | X             | X         |                |
+| Gérer les salles                              |         |        |               |           | X              |
+| Gérer les films                               |         |        |               |           | X              |
+| Gérer les scéances                            |         |        |               |           | X              |
+| Gérer les membres                             |         |        |               |           | X              |
+| Contacter le cinéma par email                 |         | X      | X             | X         | X              |
+| Se déconnecter                                |         | X      | X             | X         | X              |
 
 ## Planification initiale
 
@@ -126,12 +131,16 @@ En cas d'absence qui ne nécessite pas d'alitement, les tâches pourront être e
 
 ### Risques juridiques
 
-Au niveau du CPNV, les risques d'une fermeture définitive de l'entreprise sont infinitésimaux. En ce qui concerne une fermeture temporaire (par exemple une période de confinement), les tâches pourront être effectuées en télétravail
+Au niveau du CPNV, les risques d'une fermeture définitive de l'entreprise sont infinitésimaux. En ce qui concerne une fermeture temporaire (par exemple une période de confinement), les tâches pourront être effectuées en télétravail.
+Au niveau de l'hébergement, les risques que SwissCenter ne soit pas en mesure d'héberger notre site sont peu probables mais doivent être pris en compte. Le cas échéant, nous hébergerons temporairement en local.
 
 ### Risques sur les délais
 
+En suivant une méthode agile, nous pourrons adapter la charge de travail d'un sprint en fonction de notre avancée et de la proximité du délai.
 
 ### Risques intrinsèques à la gestion de projet 
+
+Étant donné que nous utilisons la plateforme Icescrum.ch pour gérer l'avancée de notre projet, il est peu probable qu'une tâche soit effectuée par deux personnes en même temps. Si celà devait arriver, la plateforme Github, que nous utilisons pour la gestion de nos documents, permettra de régler les conflits.
 
 ## Analyse concurrentielle
 
