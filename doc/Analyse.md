@@ -10,12 +10,12 @@ Ce site web est l'oeuvre principale de notre groupe de projet web avec base de d
 
 ## Organisation
 
-|                                               | ProductOwner | ScrumMaster | Dévelopeurs |
-| --------------------------------------------  | ------------ | ----------- | ----------- | 
-| Carrel 	Xavier                    	| X            |             |             |
-| Fontana 	Benjamin                        |              | X           | X           |
-| Muminovic 	Benjamin                        |              |             | X           |
-| Collaud 	Nathanaël                       |              |             | X           |
+|                      | ProductOwner | ScrumMaster | Dévelopeurs |
+| :------------------- | :----------: | :---------: | :---------: |
+| Carrel    Xavier     |      X       |             |             |
+| Fontana    Benjamin  |              |      X      |      X      |
+| Muminovic  Benjamin  |              |             |      X      |
+| Collaud    Nathanaël |              |             |      X      |
 
 ## Objectifs
 
@@ -62,26 +62,26 @@ Les administrateurs pourront:
 
 ## Tableau de possibilité
 
-|                                               | anonyme | client | client fidèle | personnel | administrateur |
-| --------------------------------------------  | ------- | ------ | ------------- | --------  | -------------- |
-| Voir les films disponibles                    | X       | X      | X             | X         | X              |
-| Se connecter                                  |         | X      | X             | X         | X              |
-| S'inscrire                                    | X       |        |               |           |                |
-| Voir les scéances par jour                    | X       | X      | X             | X         | X              |
-| Sélectionner une scéance                      |         | X      | X             | X         |                |
-| Sélectionner un nombre de billets             |         | X      | X             | X         |                |
-| Voir les places disponibles dans les salles   |         | X      | X             | X         | X              |
-| Sélectionner une/des place(s)                 |         | X      | X             | X         |                |
-| Passer une commande avec un retour par email  |         | X      | X             | X         |                |
-| Gérer son compte                              |         | X      | X             | X         | X              |
-| Utiliser un code de rabais                    |         | X      | X             | X         |                |
-| Avoir un rabais constant                      |         |        | X             | X         |                |
-| Gérer les salles                              |         |        |               |           | X              |
-| Gérer les films                               |         |        |               |           | X              |
-| Gérer les scéances                            |         |        |               |           | X              |
-| Gérer les membres                             |         |        |               |           | X              |
-| Contacter le cinéma par email                 |         | X      | X             | X         | X              |
-| Se déconnecter                                |         | X      | X             | X         | X              |
+|                                              | anonyme | client | client fidèle | personnel | administrateur |
+| -------------------------------------------- | :-----: | :----: | :-----------: | :-------: | :------------: |
+| Voir les films disponibles                   |    X    |   X    |       X       |     X     |       X        |
+| Se connecter                                 |         |   X    |       X       |     X     |       X        |
+| S'inscrire                                   |    X    |        |               |           |                |
+| Voir les scéances par jour                   |    X    |   X    |       X       |     X     |       X        |
+| Sélectionner une scéance                     |         |   X    |       X       |     X     |                |
+| Sélectionner un nombre de billets            |         |   X    |       X       |     X     |                |
+| Voir les places disponibles dans les salles  |         |   X    |       X       |     X     |       X        |
+| Sélectionner une/des place(s)                |         |   X    |       X       |     X     |                |
+| Passer une commande avec un retour par email |         |   X    |       X       |     X     |                |
+| Gérer son compte                             |         |   X    |       X       |     X     |       X        |
+| Utiliser un code de rabais                   |         |   X    |       X       |     X     |                |
+| Avoir un rabais constant                     |         |        |       X       |     X     |                |
+| Gérer les salles                             |         |        |               |           |       X        |
+| Gérer les films                              |         |        |               |           |       X        |
+| Gérer les scéances                           |         |        |               |           |       X        |
+| Gérer les membres                            |         |        |               |           |       X        |
+| Contacter le cinéma par email                |         |   X    |       X       |     X     |       X        |
+| Se déconnecter                               |         |   X    |       X       |     X     |       X        |
 
 ## Planification initiale
 
@@ -119,11 +119,9 @@ Les testeurs qui seront dans la classe utiliseront des PC dell avec google chrom
 
 ## Analyse des risques
 
-
-
 ### Risques techniques
 
-
+Les risques techniques de types pertes de données sont faibles car nous hébergons tout en local sur trois machines différentes puis sur un cloud synchronisé. En cas de perte d'un ordinateur nous avons la possibilité d'avoir un laptop de remplacement.
 
 ### Risques humains
 
@@ -138,15 +136,17 @@ Au niveau de l'hébergement, les risques que SwissCenter ne soit pas en mesure d
 
 En suivant une méthode agile, nous pourrons adapter la charge de travail d'un sprint en fonction de notre avancée et de la proximité du délai.
 
-### Risques intrinsèques à la gestion de projet 
+### Risques intrinsèques à la gestion de projet
 
-Étant donné que nous utilisons la plateforme Icescrum.ch pour gérer l'avancée de notre projet, il est peu probable qu'une tâche soit effectuée par deux personnes en même temps. Si celà devait arriver, la plateforme Github, que nous utilisons pour la gestion de nos documents, permettra de régler les conflits.
+Étant donné que nous utilisons la plateforme [IceScrum](https://icescrum.cpnv.ch/p/LUXHUB/#/project) pour gérer l'avancée de notre projet, il est peu probable qu'une tâche soit effectuée par deux personnes en même temps. Si celà devait arriver, la plateforme Github, que nous utilisons pour la gestion de nos documents, permettra de régler les conflits.
 
 ## Analyse concurrentielle
 
 Nos plus gros concurents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En obsérvant leurs sites pathé ont des films mis en avant, une fonctionalité intéréssante. Et cineman mettent toutes les bandes-annonces au même endroit.
 
 ## Journal de bord
+
+![journa de bord de l'équipe FOMUCO](./Journal/journal_de_bord/JDB.png)
 
 ## Bilan des objectifs
 
