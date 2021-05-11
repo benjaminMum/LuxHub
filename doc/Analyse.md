@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Ce projet a pour but de créer un site internet pour "un petit cinéma". Il sera utilisé pour réserver des billets dans les différentes salles du cinéma. Il proposera aux visiteurs les films disponibles.  
+Ce projet a pour but de créer un site internet pour "un petit cinéma". Il sera utilisé pour réserver des billets dans les différentes salles du cinéma. Il proposera aux visiteurs les films disponibles et permettra de créer un compte pour réserver des places.
 
 ## Contexte
 
-Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2èmes années du 4ème trimestre du CPNV. Nous devrons affirmer nos compétences développée au cours des dérniers modules étudié tels que: MA-08, MA-10, ICT-101, ICT-104, ICT-105, ICT-120, ICT-306, ICT-431.
+Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2èmes années du 4ème trimestre du CPNV. Nous devrons affirmer  nos compétences développées au cours des derniers modules étudiés tel que: MA-08, MA-10, ICT-101, ICT-104, ICT-105, ICT-120, ICT-306, ICT-431. Nous utiliserons principalement nos compétences dans la programmation en php mais aussi celles de gestion de projets et d'équipe.
 
 ## Organisation
 
@@ -30,7 +30,7 @@ Il y'aura plusieurs types de comptes tels que:
 
 Les utilisateurs anonymes pourront:
 
-* Voir les différents films disponibles. 
+* Voir les différents films disponibles.
 * Voir les séances par jour
 * S'inscrire/se connecter
 
@@ -85,47 +85,27 @@ Les administrateurs pourront:
 
 ## Planification initiale
 
-Le projet sera réalisé en 5 sprints
-
-### Sprint 1
-
-Le premier sprint aura pour but de lancer le projet donc ne contiendra pas beaucoup de code.
-
-### Sprint 2
-
-Le deuxième sprint sera dédié à la création de la base de données et des données tests.
-
-### Sprint 3
-
-Le troisième sprint visera à mettre en place le front-end et lancera aussi le travail avec la base de données.
-
-### Sprint 4
-
-Le quatrième sprint sera dédié à la finalisation du site.
-
-### Sprint 5
-
-Le dernier sprint aura pour unique but de faire du testing et du bug fixing.
+Le projet sera réalisé en 5 sprints. Nous utiliserons une méthode agile donc les sprints s'organiseront au fur et à mesure.
 
 ## Stratégie de tests
 
 ### Qui ?
 
-Les premier testeurs seront les membres de l'équipe. Puis nous demanderons un accès au server SwissCenter du CPNV pour pouvoir héberger le site "foncionnel". Nous essayerons de faire tester le site a un maximum de personnes en commençant par nos camarades de classes.
+Les premiers testeurs seront les membres de l'équipe. Puis nous demanderons un accès au serveur SwissCenter du CPNV pour pouvoir héberger le site "fonctionnel". Nous essayerons de faire tester le site à une vingtaine de personnes en commençant par nos camarades de classe.
 
 ### Comment ?
 
-Les testeurs qui seront dans la classe utiliseront des PC dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et utiliseront leurs matériels. Le but étant que les testeurs puissent essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou firefox.
+Les testeurs qui seront dans la classe utiliseront des PC Dell avec google chrome. Pour les testeurs externes le site sera hébergé sur SwissCenter et ils utiliseront leurs matériels. Le but étant que les testeurs puissent essayer le site de fond en comble avec du matériel différent comme un téléphone ou avec un navigateur tel que safari ou Firefox. Nous établirons une liste de test minimum.
 
 ## Analyse des risques
 
 ### Risques techniques
 
-Les risques techniques de types pertes de données sont faibles car nous hébergons tout en local sur trois machines différentes puis sur un cloud synchronisé. En cas de perte d'un ordinateur nous avons la possibilité d'avoir un laptop de remplacement.
+Les risques techniques de types pertes de données sont faibles car nous hébergeons tout en local sur trois machines différentes puis sur un cloud synchronisé [GitHub](github.com). En cas de perte d'un ordinateur nous avons la possibilité d'avoir un laptop de remplacement.
 
 ### Risques humains
 
-En cas d'absence qui ne nécessite pas d'alitement, les tâches pourront être effectuées en télétravail. Dans le cas contraire, les tâches devront être réparties par le binôme restant. Les cas les moins probables traitant de plus d'une absence devrons être discuter rapidement afin d'accumuler le moins de retard possible.
+En cas d'absence qui ne nécessite pas d'alitement, les tâches pourront être effectuées en télétravail. Dans le cas contraire, les tâches devront être réparties par le binôme restant. Les cas les moins probables traitant de plus d'une absence devrons être discuté rapidement afin d'accumuler le moins de retard possible.
 
 ### Risques juridiques
 
@@ -134,19 +114,21 @@ Au niveau de l'hébergement, les risques que SwissCenter ne soit pas en mesure d
 
 ### Risques sur les délais
 
-En suivant une méthode agile, nous pourrons adapter la charge de travail d'un sprint en fonction de notre avancée et de la proximité du délai.
+En suivant une méthode agile, nous pourrons adapter la charge de travail d'un sprint en fonction de notre avancée et de la proximité du délai. Dans le contexte actuel nous n'avons aucune chance que les délais se raccourcissent.
 
 ### Risques intrinsèques à la gestion de projet
 
-Étant donné que nous utilisons la plateforme [IceScrum](https://icescrum.cpnv.ch/p/LUXHUB/#/project) pour gérer l'avancée de notre projet, il est peu probable qu'une tâche soit effectuée par deux personnes en même temps. Si celà devait arriver, la plateforme Github, que nous utilisons pour la gestion de nos documents, permettra de régler les conflits.
+Étant donné que nous utilisons la plateforme [IceScrum](www.icescrum.com) pour gérer l'avancée de notre projet, il est peu probable qu'une tâche soit effectuée par deux personnes en même temps. Si cela devait arriver, la plateforme [GitHub](github.com), que nous utilisons pour la gestion de nos documents, permettra de régler les conflits.
 
 ## Analyse concurrentielle
 
-Nos plus gros concurents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En obsérvant leurs sites pathé ont des films mis en avant, une fonctionalité intéréssante. Et cineman mettent toutes les bandes-annonces au même endroit.
+Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En observant leurs sites pathé ont des films mis en avant, une fonctionnalité intéressante. Et cineman mettent toutes les bandes-annonces au même endroit.
 
 ## Journal de bord
 
 ![journa de bord de l'équipe FOMUCO](./Journal/journal_de_bord/JDB.png)
+
+* 10.05.2021 15:35:00 : Sprint review de l'équipe FoMuCo et le project owner Monsieur Carrel
 
 ## Bilan des objectifs
 
