@@ -1,37 +1,45 @@
 <?php
-function loginView($formDisplay)
+function loginView()
 {
-    $title = "S'enregistrer / Se connecter";
+    $title = "Se connecter";
     $currentNav = "login";
     // Content
     ob_start();
-    if ($formDisplay=='displayLogin'){
+
         ?>
+    <div class="container">
+        <h4 align="center">Se connecter</h4>
+        <form class="leave-comment" action="index.php?action=login" method="post" >
 
-        <form action="index.php?action=login" method="post" >
-            <h4>
-                Se connecter
-            </h4>
 
-            <div >
-                <label for="inputUserEmailAddress">E-Mail</label>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2">
+                <label for="inputUserEmailAddress">E-Mail</label><br>
                 <input  type="email" name="inputUserEmailAddress">
             </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2">
 
-            <div>
-                <label for="inputUserPsw">Mot de passe</label>
+                <label for="inputUserPsw">Mot de passe</label><br>
                 <input  type="password" name="inputUserPsw">
-            </div class="md-12">
-            <input type="submit" value="Se connecter"> <br>Pas de compte ? <a href="index.php?action=displayRegister" >S'inscrire</a>
+            </div >
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2">
+            Pas de compte ? <a href="/register" >S'inscrire</a>
+                </div>
+            </div>
+                    <br>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-2" align="center">
+                    <input type="submit" value="Se connecter">
+                </div>
             </div>
         </form>
-    <?php }else if ($formDisplay=='displayRegister'){?>
-        <form action="index.php?action=register" method="post" >
-            <h4 >
-                S'inscrire
-            </h4>
+    </div>
         <?php
-    }
+
     $content = ob_get_clean();
 
     require_once "view/template.php";

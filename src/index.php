@@ -28,18 +28,11 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         home();
     break;
 
-    case 'displayRegister':
-        login('displayRegister');
-        break;
-
-    case 'displayLogin':
-        login('displayLogin');
-        break;
-
-    case 'login':
+    case '/login':
         login($_POST);
         break;
-    case 'register':
+
+    case '/register':
         register($_POST);
         break;
 
