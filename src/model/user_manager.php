@@ -3,7 +3,9 @@
 require "model/dbConnector.php";
 
 /**
- * @param $registerData
+ * @param array $registerData
+ * @description Registers an user in the database with the information given
+ * @return  bool
  */
 function registerUser($registerData) {
     // By default the account type should be a member
@@ -17,11 +19,14 @@ function registerUser($registerData) {
     $lastname = $registerData['lastname'];
     $firstname = $registerData['firstname'];
     $email = $registerData['email'];
+
+    // Date format for database "YYYY-MM-DD"
     $birthdate = $registerData['birthdate'];
 
     $query = "INSERT INTO `luxhub`.`people` (`Account_type_id`, `client_code`, `lastname`, `firstname`, `email`, `password`, `birthdate`) VALUES ($accountType, $clientCode, $lastname, $firstname, $email, $password, $birthdate);";
-}
 
+    return executeQueryIUD($query);
+}
 
 /**
  * @param $userEmail
@@ -29,4 +34,13 @@ function registerUser($registerData) {
  */
 function verifyUser($userEmail) {
     $query = "SELECT `email` FROM `people` WHERE `email` = $userEmail;";
+    $result = executeQuerySelect($query);
+
+    if ($result[0][0] == $userEmail) {
+        $success = true;
+    } else {
+        $success = false;
+    }
+
+    return $success;
 }
