@@ -20,11 +20,11 @@ function registerView()
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewEmailAddress">E-Mail</label>
-                                <input type="email" name="inputNewEmailAddress" id="inputNewEmailAddress" required>
+                                <input type="email" name="registerEmail" id="inputNewEmailAddress" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewPsw">Mot de passe</label><br>
-                                <input type="password" name="inputNewPsw" id="inputNewPsw" required>
+                                <input type="password" name="registerPsw" id="inputNewPsw" required>
                             </div>
                         </div>
 
@@ -33,12 +33,12 @@ function registerView()
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewFirstName">Prénom</label>
-                                <input type="text" name="inputNewFirstName" id="inputNewFirstName" required>
+                                <input type="text" name="registerFirstname" id="inputNewFirstName" required>
                             </div>
 
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputConfirmPsw">Confirmer mot de passe</label><br>
-                                <input type="password" name="inputConfirmPsw" id="inputConfirmPsw" required>
+                                <input type="password" name="registerConfirmPsw" id="inputConfirmPsw" required>
                             </div>
                         </div>
 
@@ -47,11 +47,11 @@ function registerView()
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewLastName">Nom</label><br>
-                                <input type="text" name="inputNewLastName" id="inputNewLastName" required>
+                                <input type="text" name="registerLastname" id="inputNewLastName" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewBirthDate">Date de naissance</label><br>
-                                <input type="date" name="inputNewBirthDate" id="inputNewBirthDate" required>
+                                <input type="date" name="registerBirthdate" id="inputNewBirthDate" required>
                             </div>
                         </div>
 
