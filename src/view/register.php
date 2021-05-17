@@ -8,8 +8,10 @@ function registerView()
 
     ?>
 
-    <div class="container  " >
-        <h4 align="center" >S'inscrire</h4><br><br>
+    <div class="container " >
+        <br>
+        <h4 align="center" >S'inscrire</h4><br>
+<div class="border">
         <form  action="index.php?action=login" method="post">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-2">
@@ -54,6 +56,7 @@ function registerView()
             </div>
             </div>
         </form>
+    </div>
     </div>
 
     <?php
