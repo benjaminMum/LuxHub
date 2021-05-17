@@ -21,7 +21,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $fav
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
         <?php /** Bootstrap */ ?>
-        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
 
         <?php /** Favicon with default value */ ?>
         <link rel="icon" href="<?= $favicon ?? "/view/content/icons/favicon.svg" ?>" type="image/svg+xml">
@@ -61,8 +61,8 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $fav
                         </ul>
                         <div class="col-12 col-md-8 d-flex justify-content-md-end mt-2 mt-md-0 gx-0">
                             <?php if (empty($_SESSION)) { ?>
-                                <button href="#" class="btn btn-secondary me-2">Se connecter</button>
-                                <button href="#" class="btn btn-secondary me-2">S'enregister</button>
+                                <a href="/login" class="btn btn-secondary me-2">Se connecter</a>
+                                <a href="/register" class="btn btn-secondary me-2">S'enregister</a>
                             <?php } else { ?>
                                 <button href="#" class="btn btn btn-secondary">Se déconnecter</button>
                             <?php } ?>
