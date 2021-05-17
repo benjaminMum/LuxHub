@@ -8,54 +8,63 @@ function registerView()
 
     ?>
 
-    <div class="container" >
+    <div class="container  ">
         <br>
-        <h4 align="center" >S'inscrire</h4><br>
-<div class=" justify-content-center">
-        <form  action="index.php?action=login" method="post">
-            <div class="row ">
-                <div class="col-2">
-                    <label for="inputNewEmailAddress">E-Mail</label>
-                    <input type="email" name="inputNewEmailAddress" id="inputNewEmailAddress">
-                </div>
+        <h4 align="center">S'inscrire</h4><br>
+        <div class="row ">
+            <div class="col-3"></div>
+            <div class="col-6 d-flex justify-content-center border pt-3 pb-3">
+                <form action="index.php?action=login" method="post">
+                    <div class="row ">
+                        <div class="col-6">
+                            <label for="inputNewEmailAddress">E-Mail</label>
+                            <input type="email" name="inputNewEmailAddress" id="inputNewEmailAddress">
+                        </div>
 
-                <div class="col-2">
-                    <label for="inputNewPsw">Mot de passe</label><br>
-                    <input  type="password" name="inputNewPsw" id="inputNewPsw">
-                </div>
-            </div><br>
+                        <div class="col-6">
+                            <label for="inputNewPsw">Mot de passe</label><br>
+                            <input type="password" name="inputNewPsw" id="inputNewPsw">
+                        </div>
+                    </div>
+                    <br>
 
-            <div class="row">
-                <div class="col-2">
-                    <label for="inputNewFirstName" >Prénom</label>
-                    <input type="text" name="inputNewFirstName" id="inputNewFirstName">
-                </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="inputNewFirstName">Prénom</label>
+                            <input type="text" name="inputNewFirstName" id="inputNewFirstName">
+                        </div>
 
-                <div class="col-2">
-                    <label for="inputConfirmPsw">Confirmer mot de passe</label><br>
-                    <input type="password" name="inputConfirmPsw" id="inputConfirmPsw">
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col-2">
-                    <label for="inputNewLastName">Nom</label><br>
-                    <input type="text" name="inputNewlastName" id="inputNewlastName">
-                </div >
-                <div class="col-2">
-                    <label for="inputNewBirthDate">Date de naissance</label><br>
-                    <input type="date" name="inputNewBirthDate" id="inputNewBirthDate">
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col-2 text-end">
-                <input type="reset" value="Effacer">
-                </div>
-                <div class="col-2">
-                    <input type="submit" value="S'inscrire">
-                </div>
+                        <div class="col-6">
+                            <label for="inputConfirmPsw">Confirmer mot de passe</label><br>
+                            <input type="password" name="inputConfirmPsw" id="inputConfirmPsw">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="inputNewLastName">Nom</label><br>
+                            <input type="text" name="inputNewlastName" id="inputNewlastName">
+                        </div>
+                        <div class="col-6">
+                            <label for="inputNewBirthDate">Date de naissance</label><br>
+                            <input type="date" name="inputNewBirthDate" id="inputNewBirthDate">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-6 text-end pe-5 ">
+                            <input type="reset" value="Effacer">
+                        </div>
+                        <div class="col-6">
+                            <input type="submit" value="S'inscrire">
+                        </div>
+                    </div>
+
+                </form>
             </div>
-            </div>
-        </form>
+            <div class="col-3"></div>
+        </div>
+
     </div>
     </div>
 
