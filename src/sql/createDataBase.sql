@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `LuxHub`.`Theaters` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `columns` INT NOT NULL,
-  `rows` INT NOT NULL,
+  `line` INT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `Unique_theatre` (`name` ASC) INVISIBLE)
 ENGINE = InnoDB;

@@ -1,4 +1,4 @@
-insert into theaters ("name", "columns", "rows") values ('Lotlux', 5, 8),
+insert into theaters (name, columns, line) values ('Lotlux', 5, 8),
 ('Solowarm', 7, 6),
 ('Lotstring', 6, 8),
 ('Andalax', 7, 8);
@@ -25,8 +25,8 @@ insert into sessions (Movies_id, Theaters_id, session_code, language, date, star
 (10, 1, '1774467844', 'vo', '2021-07-01', '13:29', 59),
 (4, 2, '1807671801', 'vo', '2021-06-08', '13:53', 139);
 
-insert into account_type (name) values ('personnel'),
-('personnel'),
+insert into account_type (name) values ('client'),
+('client fidèle'),
 ('personnel'),
 ('administrateur');
 
@@ -102,7 +102,7 @@ insert into reservations (People_id, Sessions_id, reservation_code) values (18, 
 (14, 4, 29),
 (18, 4, 30);
 
-insert into seats (Reservation_id, Name) values 
+insert into seats (Reservations_id, Name) values 
 (14, 'A1'),
 (26, 'A2'),
 (13, 'A3'),
