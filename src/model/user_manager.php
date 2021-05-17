@@ -18,8 +18,9 @@ function generateId() {
     $lastRegister = end($result);
     $lastId =  (int)$lastRegister[2];
 
-    $newId = $lastId++;
-    return (string)$newId;
+    $newId = $lastId + 1;
+    $code = (string)$newId;
+    return $code;
 }
 
 /**
@@ -30,19 +31,17 @@ function generateId() {
 function registerUser($registerData) {
     // By default the account type should be a member
     $accountType = 1;
-    // Generates a new code for the client
+    // Generates a new code for the user
     $clientCode = generateId();
     // Hashes the password
-    $password = password_hash($registerData["password"], PASSWORD_DEFAULT);
+    $password = password_hash($registerData["inputNewPsw"], PASSWORD_DEFAULT);
 
+    $lastname = $registerData['inputNewLastName'];
+    $firstname = $registerData['inputNewFirstName'];
+    $email = $registerData['inputNewEmailAddress'];
+    $birthdate = $registerData['inputNewBirthDate'];
 
-    //TODO change the name of registerData's array names in the query
-    $lastname = $registerData['lastname'];
-    $firstname = $registerData['firstname'];
-    $email = $registerData['email'];
-    $birthdate = $registerData['birthdate'];
-
-    $query = "INSERT INTO `luxhub`.`people` (`Account_type_id`, `client_code`, `lastname`, `firstname`, `email`, `password`, `birthdate`) VALUES ($accountType, $clientCode, $lastname, $firstname, $email, $password, $birthdate);";
+    $query = "INSERT INTO `luxhub`.`people` (`Account_type_id`, `client_code`, `lastname`, `firstname`, `email`, `password`, `birthdate`) VALUES ($accountType, '$clientCode', '$lastname', '$firstname', '$email', '$password', '$birthdate');";
 
     return executeQueryIUD($query);
 }
@@ -52,10 +51,10 @@ function registerUser($registerData) {
  * @return bool Returns true if the user already exists, false otherwise.
  */
 function verifyUser($userEmail) {
-    $query = "SELECT `email` FROM `people` WHERE `email` = $userEmail;";
+    $query = "SELECT `email` FROM `people` WHERE `email` = '$userEmail';";
     $result = executeQuerySelect($query);
 
-    if ($result[0][0] == $userEmail) {
+    if ($result != NULL) {
         $success = true;
     } else {
         $success = false;
@@ -64,15 +63,22 @@ function verifyUser($userEmail) {
     return $success;
 }
 
+/**
+ * @param $loginData array Contains the data of the login form
+ * @return bool True if the login is successful, false otherwise
+ */
 function loginUser($loginData) {
-    $userMail = $loginData['email'];
-    $query = "SELECT `password` FROM `people` WHERE `email` = $userMail;";
+    $userMail = $loginData['inputUserEmailAddress'];
+    $query = "SELECT `password` FROM `people` WHERE `email` = '$userMail';";
     $result = executeQuerySelect($query);
+    if($result != NULL) {
+        $pswVerif = password_verify($loginData['inputUserPsw'], $result[0][0]);
 
-    $pswVerif = password_verify($loginData['password'], $result[0][0]);
-
-    if($pswVerif) {
-        $success = true;
+        if($pswVerif) {
+            $success = true;
+        } else {
+            $success = false;
+        }
     } else {
         $success = false;
     }
