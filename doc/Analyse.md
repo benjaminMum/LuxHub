@@ -129,6 +129,7 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 ![journa de bord de l'équipe FOMUCO](./Journal/journal_de_bord/JDB.png)
 
 * 10.05.2021 15:35:00 : Sprint review de l'équipe FoMuCo et le project owner Monsieur Carrel
+* 17.05.2021 14:53:00 : Validation du MCD et du MLD par Monsieu Mottier
 
 ## Bilan des objectifs
 
