@@ -1,12 +1,18 @@
 <?php
 
-function homeView()
+function homeView($movies)
 {
     $title = "Accueil";
     $currentNav = "home";
-    // Content
     ob_start();
 ?>
+    <link rel="stylesheet" href="view/css/movies.css">
+    <?php
+    $head = ob_get_clean();
+
+    // Content
+    ob_start();
+    ?>
 
     <main>
         <section class="py-5 text-center container">
@@ -21,28 +27,30 @@ function homeView()
             <div class="container">
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                <title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#777777"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                            </svg>
-
-                            <div class="card-body">
-                                <p>Titre</p>
-                                <p class="card-text">Description.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
-                                        <?php if (@$_SESSION['userType'] == "administrateur") { ?>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button>
-                                        <?php } ?>
+                <?php $i = 0 ?> 
+                    <?php while($i < 9){?>
+                        <div class="col">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-5">
+                                        <img src="<?= $movies[$i]['thumbnails'] ?>" alt="<?= $movies[$i]['title'] ?>">
                                     </div>
-                                    <small class="text-muted">125 mins</small>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $movies[$i]['title'] ?></h5>
+                                            <div class="scrollBox">
+                                                <p class="card-text"><?= $movies[$i]['description'] ?></p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <p class="card-text"><small class="text-muted"><?= $movies[$i]['duration'] ?> mins</small></p>
+                                                <a href="/movie/<?=$movies[$i][0]?>" class="btn btn-primary">Info</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php $i++; } ?>
                 </div>
             </div>
         </div>
@@ -55,5 +63,5 @@ function homeView()
 
     require_once "view/template.php";
 
-    renderTemplate($title, $content, $currentNav);
+    renderTemplate($title, $content, $currentNav, $head);
 }

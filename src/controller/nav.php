@@ -1,7 +1,9 @@
 <?php
 function home(){
+    require_once "model/movies.php";
+    $movies = getAllMovies();
     require_once "view/home.php";
-    homeView();
+    homeView($movies);
 }
 function login($userData){
     if (isset($userData['inputUserEmailAddress'])) {
@@ -29,4 +31,14 @@ function register($userData){
 function lost(){
     require_once "view/lost.php";
     lostView();
+}
+
+function displayAMovie($movieID){
+
+    require_once "model/movies.php";
+    $movie = getAMovie($movieID);
+
+    require_once "view/movie.php";
+    showAMovieView($movie, $movieID);
+
 }

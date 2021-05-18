@@ -6,9 +6,8 @@
  * @version 0.1 / 29.04.2021
  */
 
-function renderTemplate($title = null, $content = null, $currentNav = null, $favicon = null)
+function renderTemplate($title = null, $content = null, $currentNav = null, $head = null, $favicon = null)
 {
-
 ?>
     <!DOCTYPE html>
     <html lang="fr" class="h-100">
@@ -35,6 +34,8 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $fav
                 padding: 56px 0 0 0;
             }
         </style>
+
+        <?= $head ?>
 
     </head>
 
