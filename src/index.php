@@ -18,15 +18,15 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     
     default:
         lost();
-    break;
+        break;
     
     case '/':
         home();
-    break;
+        break;
     
     case '/home':
         home();
-    break;
+        break;
 
     case '/login':
         login($_POST);
@@ -35,6 +35,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/register':
         register($_POST);
         break;
-
-    
+    case (preg_match('/^\/movie\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        displayAMovie($res[1]);
+        break;
 }

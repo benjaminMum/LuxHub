@@ -3,16 +3,16 @@ insert into theaters (name, columns, line) values ('Lotlux', 5, 8),
 ('Lotstring', 6, 8),
 ('Andalax', 7, 8);
 
-insert into movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers) values (1, 'The Old Maid', '2018-09-05', 156, 'Encounter for attention to other artificial openings of digestive tract', 0, 'https://via.placeholder.com/150', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(2, 'Finding Joy', '2011-02-23', 167, 'Traumatic rupture of other ligament of left little finger at metacarpophalangeal and interphalangeal joint, initial encounter', 5, 'https://via.placeholder.com/150', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(3, 'America''s Heart and Soul', '2018-12-04', 53, 'Underdosing of unspecified topical agent, sequela', 1, 'https://via.placeholder.com/150', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(4, 'Punksters & Youngsters (Punk - Tauti joka ei tapa)', '2016-09-14', 156, 'Unspecified sprain of unspecified wrist, initial encounter', 2, 'https://via.placeholder.com/150', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(5, 'Suing the Devil', '2016-03-24', 76, 'Displaced trimalleolar fracture of left lower leg', 10, 'https://via.placeholder.com/150', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(6, 'Azumi 2: Death or Love', '2000-03-16', 45, 'External constriction of unspecified external genital organs, male, subsequent encounter', 12, 'https://via.placeholder.com/150', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(7, 'Brunet Will Call (Brunet wieczorowa pora)', '2016-12-02', 131, 'Contusion, laceration, and hemorrhage of cerebellum with loss of consciousness of 6 hours to 24 hours, initial encounter', 10, 'https://via.placeholder.com/150', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(8, 'Rebecca of Sunnybrook Farm', '2010-01-28', 154, 'Other superficial bite of left front wall of thorax, initial encounter', 5, 'https://via.placeholder.com/150', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(9, 'Sherlock Holmes: Terror by Night', '2004-03-25', 90, 'Chronic combined systolic (congestive) and diastolic (congestive) heart failure', 14, 'https://via.placeholder.com/150', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(10, 'Pirates of the Caribbean: Dead Man''s Chest', '2016-12-27', 91, 'Displaced avulsion fracture (chip fracture) of left talus, subsequent encounter for fracture with nonunion', 15, 'https://via.placeholder.com/150', 'https://www.youtube.com/watchv=u31qwQUeGuM');
+insert into movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers) values (1, 'The Old Maid', '2018-09-05', 156, 'Encounter for attention to other artificial openings of digestive tract', 0, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(2, 'Finding Joy', '2011-02-23', 167, 'Traumatic rupture of other ligament of left little finger at metacarpophalangeal and interphalangeal joint, initial encounter', 5, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(3, 'America''s Heart and Soul', '2018-12-04', 53, 'Underdosing of unspecified topical agent, sequela', 1, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(4, 'Punksters & Youngsters (Punk - Tauti joka ei tapa)', '2016-09-14', 156, 'Unspecified sprain of unspecified wrist, initial encounter', 2, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(5, 'Suing the Devil', '2016-03-24', 76, 'Displaced trimalleolar fracture of left lower leg', 10, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(6, 'Azumi 2: Death or Love', '2000-03-16', 45, 'External constriction of unspecified external genital organs, male, subsequent encounter', 12, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(7, 'Brunet Will Call (Brunet wieczorowa pora)', '2016-12-02', 131, 'Contusion, laceration, and hemorrhage of cerebellum with loss of consciousness of 6 hours to 24 hours, initial encounter', 10, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(8, 'Rebecca of Sunnybrook Farm', '2010-01-28', 154, 'Other superficial bite of left front wall of thorax, initial encounter', 5, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(9, 'Sherlock Holmes: Terror by Night', '2004-03-25', 90, 'Chronic combined systolic (congestive) and diastolic (congestive) heart failure', 14, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(10, 'Pirates of the Caribbean: Dead Man''s Chest', '2016-12-27', 91, 'Displaced avulsion fracture (chip fracture) of left talus, subsequent encounter for fracture with nonunion', 15, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM');
 
 insert into sessions (Movies_id, Theaters_id, session_code, language, date, starting_hour, duration) values (10, 3, '4343036707', 'vostfr', '2021-12-14', '16:48', 87),
 (4, 1, '9466767313', 'vo', '2021-08-02', '15:15', 135),
