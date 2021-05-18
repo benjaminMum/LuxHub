@@ -68,7 +68,7 @@ function registerView()
 
                     </form>
                     <div>
-                        <?php if(isset($err)) :?>
+                        <?php if(@isset($err)) :?>
                         <p class="alert-danger"><?= $err?></p>
                         <?php endif;?>
                     </div>
