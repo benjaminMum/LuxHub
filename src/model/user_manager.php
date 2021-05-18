@@ -34,12 +34,12 @@ function registerUser($registerData) {
     // Generates a new code for the user
     $clientCode = generateId();
     // Hashes the password
-    $password = password_hash($registerData["inputNewPsw"], PASSWORD_DEFAULT);
+    $password = password_hash($registerData["registerPsw"], PASSWORD_DEFAULT);
 
-    $lastname = $registerData['inputNewLastName'];
-    $firstname = $registerData['inputNewFirstName'];
-    $email = $registerData['inputNewEmailAddress'];
-    $birthdate = $registerData['inputNewBirthDate'];
+    $lastname = $registerData['registerLastname'];
+    $firstname = $registerData['registerFirstname'];
+    $email = $registerData['registerEmail'];
+    $birthdate = $registerData['registerBirthdate'];
 
     $query = "INSERT INTO `luxhub`.`people` (`Account_type_id`, `client_code`, `lastname`, `firstname`, `email`, `password`, `birthdate`) VALUES ($accountType, '$clientCode', '$lastname', '$firstname', '$email', '$password', '$birthdate');";
 
@@ -68,11 +68,11 @@ function verifyUser($userEmail) {
  * @return bool True if the login is successful, false otherwise
  */
 function loginUser($loginData) {
-    $userMail = $loginData['inputUserEmailAddress'];
+    $userMail = $loginData['loginEmail'];
     $query = "SELECT `password` FROM `people` WHERE `email` = '$userMail';";
     $result = executeQuerySelect($query);
     if($result != NULL) {
-        $pswVerif = password_verify($loginData['inputUserPsw'], $result[0][0]);
+        $pswVerif = password_verify($loginData['loginPsw'], $result[0][0]);
 
         if($pswVerif) {
             $success = true;
