@@ -1,32 +1,38 @@
 <?php
-function loginView()
+function loginView($err = null)
 {
     $title = "Se connecter";
     $currentNav = "login";
     // Content
     ob_start();
 
-        ?>
+?>
     <div class="container">
 
         <br>
-        <div class="text-center"><h4 >Se connecter</h4></div>
+        <div class="text-center">
+            <h4>Se connecter</h4>
+        </div>
         <br>
 
         <div class="container border  w-25 justify-content-center">
             <form action="/login" method="post" class="pt-3 pb-3 justify-content-center">
-
+                <div>
+                    <?php if (@isset($err)) { ?>
+                        <p class="alert alert-danger"><?= $err ?></p>
+                    <?php } ?>
+                </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-8 pb-3">
                         <label for="inputUserEmailAddress">E-Mail</label><br>
-                        <input  type="email" name="loginEmail" id="inputUserEmailAddress">
+                        <input type="email" name="loginEmail" id="inputUserEmailAddress" require>
                     </div>
                 </div>
 
                 <div class="row d-flex justify-content-center">
                     <div class="col-8 pb-3">
                         <label for="inputUserPsw">Mot de passe</label><br>
-                        <input  type="password" name="loginPsw" id="inputUserPsw">
+                        <input type="password" name="loginPsw" id="inputUserPsw" require>
                     </div>
                 </div>
 
@@ -34,7 +40,7 @@ function loginView()
 
                 <div class="row d-flex justify-content-center">
                     <div class="col-8">
-                        <p>Pas de compte ? <a href="/register" >S'inscrire</a></p>
+                        <p>Pas de compte ? <a href="/register">S'inscrire</a></p>
                     </div>
                 </div>
 
@@ -49,7 +55,7 @@ function loginView()
             </form>
         </div>
     </div>
-        <?php
+<?php
 
     $content = ob_get_clean();
 

@@ -1,22 +1,28 @@
 <?php
-function registerView()
+function registerView($err = null)
 {
     $title = "S'enregistrer";
     $currentNav = "register";
     // Content
     ob_start();
 
-    ?>
+?>
 
     <div class="container">
         <br>
-        <div class="text-center"><h4 >S'inscrire</h4></div>
+        <div class="text-center">
+            <h4>S'inscrire</h4>
+        </div>
         <br>
-
+        <div>
+            <?php if (@isset($err)) : ?>
+                <p class="alert alert-danger"><?= $err ?></p>
+            <?php endif; ?>
+        </div>
         <div class="align-content-center">
             <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
                 <div class="col-lg-6 d-flex justify-content-center border pt-3 pb-3 align-content-center">
-                    <form action="/register" method="post" >
+                    <form action="/register" method="post">
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewEmailAddress">E-Mail</label>
@@ -67,17 +73,12 @@ function registerView()
                         </div>
 
                     </form>
-                    <div>
-                        <?php if(@isset($err)) :?>
-                        <p class="alert-danger"><?= $err?></p>
-                        <?php endif;?>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <?php
+<?php
 
     $content = ob_get_clean();
 

@@ -1,6 +1,6 @@
 <?php
 
-function homeView($movies)
+function homeView($movies, $res)
 {
     $title = "Accueil";
     $currentNav = "home";
@@ -15,6 +15,9 @@ function homeView($movies)
     ?>
 
     <main>
+        <?php if(isset($res)){  ?>
+        <p class="alert alert-success"><?=$res?></p>
+        <?php } ?>
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">

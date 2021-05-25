@@ -35,7 +35,12 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/register':
         register($_POST);
         break;
+
     case (preg_match('/^\/movie\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
         displayAMovie($res[1]);
+        break;
+
+    case '/logout':
+        logout();
         break;
 }

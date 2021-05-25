@@ -1,20 +1,22 @@
 <?php
 
-function home(){
+function home($res = null){
     require_once "model/movies.php";
     $movies = getAllMovies();
     require_once "view/home.php";
-    homeView($movies);
+    homeView($movies, $res);
 }
 
 function login($userData){
     require_once "model/user_manager.php";
     if (isset($userData['loginEmail'])) {
         if(loginUser($userData)) {
+            $_SESSION['email'] = $userData ['loginEmail'];
             home();
         } else {
             require_once "view/login.php";
-            loginView();
+            $err = "Votre email ou votre mot de passe n'est pas valide.";
+            loginView($err);
         }
     } else {
         require_once "view/login.php";
@@ -27,17 +29,23 @@ function register($userData){
     if (isset($userData['registerEmail'])) {
         if(verifyUser($userData['registerEmail']) == false) {
             if($userData['registerPsw'] == $userData['registerConfirmPsw']) {
-                registerUser($userData);
-                home();
+                if (registerUser($userData)){
+                    $res = "Vous avez bien été enregistré.";
+                    $_SESSION['email'] = $_POST['registerEmail'];
+                    home($res);
+                }else{
+                    $err = "L'insertion dans la base de données a échoué.";
+                    registerView($err);
+                }
             } else {
-                $err = "Vérifiez les mots de passes";
+                $err = "Les mots de passes ne correspondent pas.";
                 require_once "view/register.php";
-                registerView();
+                registerView($err);
             }
         } else {
-            $err = "Cet adresse mail est déjà connue";
+            $err = "Cet adresse mail est déjà utilisée.";
             require_once "view/register.php";
-            registerView();
+            registerView($err);
         }
     } else {
         require_once "view/register.php";
@@ -58,5 +66,13 @@ function displayAMovie($movieID){
 
     require_once "view/movie.php";
     showAMovieView($movie, $movieID);
+
+}
+
+function logout(){
+
+    session_destroy();
+
+    home();
 
 }
