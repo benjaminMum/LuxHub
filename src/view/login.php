@@ -8,36 +8,46 @@ function loginView()
 
         ?>
     <div class="container">
+
         <br>
-        <h4 align="center">Se connecter</h4><br>
-        <form class="leave-comment" action="index.php?action=login" method="post" >
+        <div class="text-center"><h4 >Se connecter</h4></div>
+        <br>
 
+        <div class="container border  w-25 justify-content-center">
+            <form action="/login" method="post" class="pt-3 pb-3 justify-content-center">
 
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-2">
-                <label for="inputUserEmailAddress">E-Mail</label><br>
-                <input  type="email" name="inputUserEmailAddress" id="inputUserEmailAddress">
-            </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-2">
-
-                <label for="inputUserPsw">Mot de passe</label><br>
-                <input  type="password" name="inputUserPsw" id="inputUserPsw">
-            </div >
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-2">
-            Pas de compte ? <a href="/register" >S'inscrire</a>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-8 pb-3">
+                        <label for="inputUserEmailAddress">E-Mail</label><br>
+                        <input  type="email" name="loginEmail" id="inputUserEmailAddress">
+                    </div>
                 </div>
-            </div>
-                    <br>
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-2" align="center">
-                    <input type="submit" value="Se connecter">
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-8 pb-3">
+                        <label for="inputUserPsw">Mot de passe</label><br>
+                        <input  type="password" name="loginPsw" id="inputUserPsw">
+                    </div>
                 </div>
-            </div>
-        </form>
+
+                <br>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-8">
+                        <p>Pas de compte ? <a href="/register" >S'inscrire</a></p>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8 col-md-2 col-sm-2 text-center">
+                        <input type="submit" value="Se connecter" class="justify-content-center">
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
         <?php
 
