@@ -6,13 +6,13 @@ Ce projet a pour but de créer un site internet pour "un petit cinéma". Il sera
 
 ## Contexte
 
-Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2èmes années du 4ème trimestre du CPNV. Nous devrons affirmer  nos compétences développées au cours des derniers modules étudiés tel que: MA-08, MA-10, ICT-101, ICT-104, ICT-105, ICT-120, ICT-306, ICT-431. Nous utiliserons principalement nos compétences dans la programmation en php mais aussi celles de gestion de projets et d'équipe.
+Ce site web est l'oeuvre principale de notre groupe de projet web avec base de données de 2ème année pour le 4ème trimestre de formation au CPNV. Nous devrons affirmer  nos compétences développées au cours des derniers modules étudiés tel que: MA-08, MA-10, ICT-101, ICT-104, ICT-105, ICT-120, ICT-306, ICT-431. Nous utiliserons principalement nos compétences dans la programmation en php mais aussi celles de gestion de projets et d'équipe.
 
 ## Organisation
 
 |                      | ProductOwner | ScrumMaster | Dévelopeurs |
 | :------------------- | :----------: | :---------: | :---------: |
-| Carrel    Xavier     |      X       |             |             |
+| Carrel     Xavier    |      X       |             |             |
 | Fontana    Benjamin  |              |      X      |      X      |
 | Muminovic  Benjamin  |              |             |      X      |
 | Collaud    Nathanaël |              |             |      X      |
@@ -21,7 +21,7 @@ Ce site web est l'oeuvre principale de notre groupe de projet web avec base de d
 
 ### Cas d'utilisation
 
-Il y'aura plusieurs types de comptes tels que:
+Il y aura plusieurs types de compte tels que:
 
 * Administrateur
 * Personnel(employé du cinéma)
@@ -34,11 +34,11 @@ Les utilisateurs anonymes pourront:
 * Voir les séances par jour
 * S'inscrire/se connecter
 
-Tous les comptes instrits sur le site hormis les administrateurs pourront:
+Tous les comptes inscrits sur le site hormis les administrateurs pourront:
 
-* Sélectionner une scéance
+* Sélectionner une séance
 * Sélectionner un nombre de billets
-* Voir les places disponibles dans les salle
+* Voir les places disponibles dans les salles
 * Sélectionner une/des place(s) (par rapport au nombre de billets)
 * Passer une commande avec un retour par email
 * Gérer son compte
@@ -56,7 +56,7 @@ Les administrateurs pourront:
 
 * Gérer les salles
 * Gérer les films
-* Gérer les scéances
+* Gérer les séances
 * Gérer les membres
 * Se déconnecter
 
@@ -67,8 +67,8 @@ Les administrateurs pourront:
 | Voir les films disponibles                   |    X    |   X    |       X       |     X     |       X        |
 | Se connecter                                 |         |   X    |       X       |     X     |       X        |
 | S'inscrire                                   |    X    |        |               |           |                |
-| Voir les scéances par jour                   |    X    |   X    |       X       |     X     |       X        |
-| Sélectionner une scéance                     |         |   X    |       X       |     X     |                |
+| Voir les séances par jour                    |    X    |   X    |       X       |     X     |       X        |
+| Sélectionner une séance                      |         |   X    |       X       |     X     |                |
 | Sélectionner un nombre de billets            |         |   X    |       X       |     X     |                |
 | Voir les places disponibles dans les salles  |         |   X    |       X       |     X     |       X        |
 | Sélectionner une/des place(s)                |         |   X    |       X       |     X     |                |
@@ -122,14 +122,14 @@ En suivant une méthode agile, nous pourrons adapter la charge de travail d'un s
 
 ## Analyse concurrentielle
 
-Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En observant leurs sites pathé ont des films mis en avant, une fonctionnalité intéressante. Et cineman mettent toutes les bandes-annonces au même endroit.
+Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et leurs différents cinémas puis [cineman](www.cineman.ch). En observant leurs sites, pathé ont des films mis en avant, une fonctionnalité intéressante. Et cineman mettent toutes les bandes-annonces au même endroit.
 
 ## Journal de bord
 
 ![journa de bord de l'équipe FOMUCO](./Journal/journal_de_bord/JDB.png)
 
 * 10.05.2021 15:35:00 : Sprint review de l'équipe FoMuCo et le project owner Monsieur Carrel
-* 17.05.2021 14:53:00 : Validation du MCD et du MLD par Monsieu Mottier
+* 17.05.2021 14:53:00 : Validation du MCD et du MLD par Monsieur Mottier
 
 ## Bilan des objectifs
 
