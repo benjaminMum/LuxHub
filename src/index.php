@@ -43,4 +43,8 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/logout':
         logout();
         break;
+
+    case '/addMovie':
+        addMovie(@$_POST, @$_FILES);
+        break;
 }
