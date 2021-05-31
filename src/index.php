@@ -40,6 +40,14 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         displayAMovie($res[1]);
         break;
 
+    case '/user':
+        displayUser();
+        break;
+
+    case '/modifyUser':
+        modifyUser();
+        break;
+
     case '/logout':
         logout();
         break;

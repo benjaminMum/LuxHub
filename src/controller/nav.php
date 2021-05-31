@@ -7,6 +7,17 @@ function home($res = null){
     homeView($movies, $res);
 }
 
+function modifyUser() {
+    require_once "view/modify-user.php";
+    modifyUserView();
+}
+
+function displayUser() {
+    require_once "view/user.php";
+    userView();
+
+}
+
 function login($userData){
     require_once "model/user_manager.php";
     if (isset($userData['loginEmail'])) {
