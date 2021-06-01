@@ -45,7 +45,7 @@ function writeAMovie($movieData)
   $duration = $movieData['movieDuration'];
   $description = $movieData['movieDescription'];
   $legalAge = $movieData['movieLegalAge'];
-  $thumbnail = $movieData['movieThumbnail'];
+  $thumbnail = "view/content/img/thumbnail/" . $movieData['movieID'] . ".jpg";
   $trailer = $movieData['movieTrailer'];
 
   $sql = "INSERT INTO movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers)  VALUES ('$id', '$title', '$releaseDate', $duration, '$description', $legalAge, '$thumbnail', '$trailer')";

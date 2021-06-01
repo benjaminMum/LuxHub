@@ -83,8 +83,6 @@ function logout()
 function addMovie($movieData, $files)
 {
 
-    //print_r($movieData);
-
     $success = false;
 
     require_once "view/addMovie.php";
