@@ -45,7 +45,7 @@ function addMovieView($err = null)
 
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputMovieDuration">Durée(minutes)</label><br>
-                                <input type="number" name="movieDuration" id="inputMovieDuration" required>
+                                <input type="number" name="movieDuration" id="inputMovieDuration" required min="0" oninput="validity.valid||(value='');">
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@ function addMovieView($err = null)
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputMovieLegalAge">Âge légal</label><br>
-                                <input type="number" name="movieLegalAge" id="inputMovieLegalAge" required>
+                                <input type="number" name="movieLegalAge" id="inputMovieLegalAge" required min="0" oninput="validity.valid||(value='');">
                             </div>
 
                         </div>
