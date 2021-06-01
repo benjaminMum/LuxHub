@@ -46,6 +46,28 @@ function registerUser($registerData) {
     return executeQueryIUD($query);
 }
 
+function getUserData($userMail) {
+    $query = "SELECT * FROM `people` WHERE `email` = '$userMail';";
+    $userData = executeQuerySelect($query);
+
+    return $userData[0];
+}
+
+function modifyUserDB($userId, $modifyData) {
+
+    $password = password_hash($modifyData["modifyPsw"], PASSWORD_DEFAULT);
+
+    $lastname = $modifyData['modifyLastname'];
+    $firstname = $modifyData['modifyFirstname'];
+    $email = $modifyData['modifyEmail'];
+    $birthdate = $modifyData['modifyBirthdate'];
+
+    $query = "UPDATE `people` SET `lastname` = '$lastname', `firstname` = '$firstname', `email` = '$email', `password` = '$password', `birthdate` = '$birthdate' WHERE `client_code` = '$userId';";
+    $success = executeQueryIUD($query);
+
+    return $success;
+}
+
 /**
  * @param $userEmail
  * @return bool Returns true if the user already exists, false otherwise.
