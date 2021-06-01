@@ -27,11 +27,11 @@ function modifyUserView($err = null, $uData)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewEmailAddress">E-Mail</label>
-                                <input type="email" name="modifyEmail" id="inputNewEmailAddress" value="<?= $uData['email']?>" required>
+                                <input type="email" name="modifyEmail" id="inputNewEmailAddress" value="<?= $uData['email']?>" tabindex="1" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewPsw">Mot de passe</label><br>
-                                <input type="password" name="modifyPsw" id="inputNewPsw" required>
+                                <input type="password" name="modifyPsw" id="inputNewPsw" tabindex="4" required>
                             </div>
                         </div>
 
@@ -40,12 +40,12 @@ function modifyUserView($err = null, $uData)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewFirstName">Prénom</label>
-                                <input type="text" name="modifyFirstname" id="inputNewFirstName" value="<?= $uData['firstname']?>" required>
+                                <input type="text" name="modifyFirstname" id="inputNewFirstName" value="<?= $uData['firstname']?>" tabindex="2" required>
                             </div>
 
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputConfirmPsw">Confirmer mot de passe</label><br>
-                                <input type="password" name="modifyConfirmPsw" id="inputConfirmPsw" required>
+                                <input type="password" name="modifyConfirmPsw" id="inputConfirmPsw" tabindex="5" required>
                             </div>
                         </div>
 
@@ -54,11 +54,11 @@ function modifyUserView($err = null, $uData)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewLastName">Nom</label><br>
-                                <input type="text" name="modifyLastname" id="inputNewLastName" value="<?= $uData['lastname']?>" required>
+                                <input type="text" name="modifyLastname" id="inputNewLastName" value="<?= $uData['lastname']?>" tabindex="3" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewBirthDate">Date de naissance</label><br>
-                                <input type="date" name="modifyBirthdate" id="inputNewBirthDate" value="<?= $uData['birthdate']?>" required>
+                                <input type="date" name="modifyBirthdate" id="inputNewBirthDate" value="<?= $uData['birthdate']?>" tabindex="6" required>
                             </div>
                         </div>
 
