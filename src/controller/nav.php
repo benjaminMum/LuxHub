@@ -35,9 +35,11 @@ function modifyUser($code, $modifyData) {
 }
 
 function displayUser() {
+    require_once "model/user_manager.php";
     if(isset($_SESSION['email'])) {
+        $userData = getUserData($_SESSION['email']);
         require_once "view/user.php";
-        userView();
+        userView($userData);
     } else {
         home();
     }

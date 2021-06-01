@@ -1,6 +1,6 @@
 <?php
 
-function userView($err = null)
+function userView($uData)
 {
     $title = "Utilisateur";
     $currentNav = "login";
@@ -9,8 +9,15 @@ function userView($err = null)
 
 ?>
 
+    <h2>User page</h2>
 
-<h2>User page</h2>
+    <button><a href="/modifyUser">Modifier</a></button>
+
+    <p><?= $uData['email']?></p>
+    <p><?= $uData['firstname']?></p>
+    <p><?= $uData['lastname']?></p>
+    <p><?= $uData['birthdate']?></p>
+
 
 <?php
 
