@@ -11,7 +11,7 @@ function soonView()
     ?>
     <?php  if ($_SESSION['Account_type_id'] != 3) {
     ?>
-    <div class="align-content-center">
+    <div class="align-content-center" xmlns:min="http://www.w3.org/1999/xhtml">
         <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
             <div class="col-lg-6 d-flex justify-content-center border pt-3 pb-3 align-content-center">
                 <form action="" method="post">
@@ -60,12 +60,12 @@ function soonView()
 
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
-                            <label for="inputNewLastName">Nom</label><br>
-                            <input type="text" name="registerLastname" id="inputNewLastName" required>
+                            <label for="inputSessionStart">Début de la séance</label><br>
+                            <input type="time" name="sessionStart" id="inputSessionStart" min="10:00" max="23:00" required >
                         </div>
                         <div class="col-lg-6 col-sm-6">
-                            <label for="inputNewBirthDate">Date de naissance</label><br>
-                            <input type="date" name="registerBirthdate" id="inputNewBirthDate" required>
+                            <label for="inputSessionDuration">Durée</label><br>
+                            <input type="number" name="sessionDuration" id="inputSessionDuration" min="30" max="43200" required placeholder="En minutes">
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@ function soonView()
                             <input type="reset" value="Effacer">
                         </div>
                         <div class="col-lg-6 col-sm-6">
-                            <input type="submit" value="S'inscrire">
+                            <input type="submit" value="Ajouter">
                         </div>
                     </div>
 
