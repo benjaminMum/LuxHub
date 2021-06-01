@@ -17,7 +17,7 @@ function soonView()
                 <form action="" method="post">
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
-                            <label for="inputFilmSession">Film</label>
+                            <label for="inputFilmSession" >Film</label><br>
                             <select name="filmSession" id="inputFilmSession" required>
                                 <?php foreach ($films as $availableFilms) {
                                     ?>
