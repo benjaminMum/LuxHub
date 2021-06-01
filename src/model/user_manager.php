@@ -46,13 +46,24 @@ function registerUser($registerData) {
     return executeQueryIUD($query);
 }
 
+/**
+ * @description Get the information of an user from his email
+ * @param $userMail string mail of the user
+ * @return array all the data of the user
+ */
 function getUserData($userMail) {
     $query = "SELECT * FROM `people` WHERE `email` = '$userMail';";
     $userData = executeQuerySelect($query);
 
+    // the data of the user
     return $userData[0];
 }
 
+/**
+ * @param $userId string ID of the user to modify
+ * @param $modifyData array the new data to replace in db
+ * @return bool|null the success message
+ */
 function modifyUserDB($userId, $modifyData) {
 
     $password = password_hash($modifyData["modifyPsw"], PASSWORD_DEFAULT);
@@ -69,7 +80,7 @@ function modifyUserDB($userId, $modifyData) {
 }
 
 /**
- * @param $userEmail
+ * @param $userEmail string the email to verify the existence of
  * @return bool Returns true if the user already exists, false otherwise.
  */
 function verifyUser($userEmail) {
