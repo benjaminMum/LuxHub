@@ -147,3 +147,8 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 ### Difficultés
 
 ### Suites possibles
+
+### Requirements
+
+* php 8+
+  * extenstion : curl, fileinfo, gd, mbstring, pdo_mysql
