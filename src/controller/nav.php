@@ -76,3 +76,8 @@ function logout(){
     home();
 
 }
+
+function soon(){
+    require_once "view/soon.php";
+soonView();
+}
