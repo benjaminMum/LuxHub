@@ -1,20 +1,23 @@
-insert into theaters (name, columns, line) values ('Lotlux', 5, 8),
+insert into theaters (name, columns, line) values 
+('Lotlux', 5, 8),
 ('Solowarm', 7, 6),
 ('Lotstring', 6, 8),
 ('Andalax', 7, 8);
 
-insert into movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers) values (1, 'The Old Maid', '2018-09-05', 156, 'Encounter for attention to other artificial openings of digestive tract', 0, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(2, 'Finding Joy', '2011-02-23', 167, 'Traumatic rupture of other ligament of left little finger at metacarpophalangeal and interphalangeal joint, initial encounter', 5, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(3, 'America''s Heart and Soul', '2018-12-04', 53, 'Underdosing of unspecified topical agent, sequela', 1, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(4, 'Punksters & Youngsters (Punk - Tauti joka ei tapa)', '2016-09-14', 156, 'Unspecified sprain of unspecified wrist, initial encounter', 2, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(5, 'Suing the Devil', '2016-03-24', 76, 'Displaced trimalleolar fracture of left lower leg', 10, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(6, 'Azumi 2: Death or Love', '2000-03-16', 45, 'External constriction of unspecified external genital organs, male, subsequent encounter', 12, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(7, 'Brunet Will Call (Brunet wieczorowa pora)', '2016-12-02', 131, 'Contusion, laceration, and hemorrhage of cerebellum with loss of consciousness of 6 hours to 24 hours, initial encounter', 10, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
-(8, 'Rebecca of Sunnybrook Farm', '2010-01-28', 154, 'Other superficial bite of left front wall of thorax, initial encounter', 5, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(9, 'Sherlock Holmes: Terror by Night', '2004-03-25', 90, 'Chronic combined systolic (congestive) and diastolic (congestive) heart failure', 14, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
-(10, 'Pirates of the Caribbean: Dead Man''s Chest', '2016-12-27', 91, 'Displaced avulsion fracture (chip fracture) of left talus, subsequent encounter for fracture with nonunion', 15, 'https://via.placeholder.com/182x268', 'https://www.youtube.com/watchv=u31qwQUeGuM');
+insert into movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers) values 
+(1, 'Les Évadés', '1995-03-01', 142, "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", 0, 'view/content/img/thumbnail/1.jpg', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(2, 'Le parrain', '1972-10-18', 175, "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.", 12, 'view/content/img/thumbnail/2.jpg', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(3, "The Dark Knight : Le Chevalier noir", '2018-08-13', 152, 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', 0, 'view/content/img/thumbnail/3.jpg', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(4, '12 Hommes en colère', '1957-11-04', 96, 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.', 0, 'view/content/img/thumbnail/4.jpg', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(5, 'La liste de Schindler', '1993-03-02', 195, 'In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.', 0, 'view/content/img/thumbnail/5.jpg', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(6, 'Le Seigneur des anneaux : Le Retour du roi', '2003-12-17', 201, "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.", 0, 'view/content/img/thumbnail/6.jpg', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(7, 'Pulp Fiction', '1994-10-26', 131, 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.', 12, 'view/content/img/thumbnail/7.jpg', 'https://www.youtube.com/watchv=u31qwQUeGuM'),
+(8, 'Le Bon, la brute, le truand', '1966-03-08', 161, 'A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.', 12, 'view/content/img/thumbnail/8.jpg', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(9, 'Fight Club', '1999-11-10', 139, 'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.', 16, 'view/content/img/thumbnail/9.jpg', 'https://www.youtube.com/watcv=u31qwQUeGuM'),
+(10, 'Forrest Gump', '1994-10-05', 142, 'The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.', 0, 'view/content/img/thumbnail/10.jpg', 'https://www.youtube.com/watchv=u31qwQUeGuM');
 
-insert into sessions (Movies_id, Theaters_id, session_code, language, date, starting_hour, duration) values (10, 3, '4343036707', 'vostfr', '2021-12-14', '16:48', 87),
+insert into sessions (Movies_id, Theaters_id, session_code, language, date, starting_hour, duration) values 
+(10, 3, '4343036707', 'vostfr', '2021-12-14', '16:48', 87),
 (4, 1, '9466767313', 'vo', '2021-08-02', '15:15', 135),
 (7, 2, '1890989266', 'vo', '2021-08-25', '21:00', 98),
 (8, 3, '5117283112', 'vostfr', '2021-10-11', '14:12', 107),
@@ -25,12 +28,14 @@ insert into sessions (Movies_id, Theaters_id, session_code, language, date, star
 (10, 1, '1774467844', 'vo', '2021-07-01', '13:29', 59),
 (4, 2, '1807671801', 'vo', '2021-06-08', '13:53', 139);
 
-insert into account_type (name) values ('client'),
+insert into account_type (name) values 
+('client'),
 ('client fidèle'),
 ('personnel'),
 ('administrateur');
 
-insert into people (Account_type_id, client_code, lastname, firstname, email, password, birthdate) values (1, 1, 'Midford', 'Irina', 'imidford0@dailymail.co.uk', 'Pa$$w0rd', '1994-08-20'),
+insert into people (Account_type_id, client_code, lastname, firstname, email, password, birthdate) values 
+(1, 1, 'Midford', 'Irina', 'imidford0@dailymail.co.uk', 'Pa$$w0rd', '1994-08-20'),
 (3, 2, 'Spaughton', 'Robbert', 'rspaughton1@ebay.co.uk', 'Pa$$w0rd', '2004-08-08'),
 (2, 3, 'Faye', 'Richardo', 'rfaye2@mlb.com', 'Pa$$w0rd', '1963-05-12'),
 (1, 4, 'Jeffery', 'Happy', 'hjeffery3@arstechnica.com', 'Pa$$w0rd', '1964-07-02'),
@@ -71,7 +76,8 @@ insert into people (Account_type_id, client_code, lastname, firstname, email, pa
 (1, 39, 'Hastewell', 'Torrance', 'thastewell12@skyrock.com', 'Pa$$w0rd', '2009-03-19'),
 (2, 40, 'Erdely', 'Morty', 'merdely13@who.int', 'Pa$$w0rd', '2013-11-22');
 
-insert into reservations (People_id, Sessions_id, reservation_code) values (18, 3, 1),
+insert into reservations (People_id, Sessions_id, reservation_code) values 
+(18, 3, 1),
 (10, 1, 2),
 (14, 9, 3),
 (20, 9, 4),

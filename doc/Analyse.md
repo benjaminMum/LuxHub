@@ -130,6 +130,7 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 
 * 10.05.2021 15:35:00 : Sprint review de l'équipe FoMuCo et le project owner Monsieur Carrel
 * 17.05.2021 14:53:00 : Validation du MCD et du MLD par Monsieur Mottier
+* 31.05.2021 16:50:00 : Validation de la modification du MLD (suppression de la table images) par Monsieur Mottier
 
 ## Bilan des objectifs
 
@@ -146,3 +147,8 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 ### Difficultés
 
 ### Suites possibles
+
+### Requirements
+
+* php 8+
+  * extenstion : curl, fileinfo, gd, mbstring, pdo_mysql
