@@ -1,5 +1,5 @@
 <?php
-function soonView($films=null,$theaters=null)
+function soonView( $sessions=null,$films=null,$theaters=null)
 {
     $title = "Prochainement";
     $currentNav = "soon";
@@ -9,6 +9,46 @@ function soonView($films=null,$theaters=null)
     ?>
     <?php  //if ($_SESSION['Account_type_id'] = 3) {
     ?>
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Prochaines séances</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <?php foreach ($sessions as $session){?>
+                    <div class="col">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <img src="<?= $session['thumbnails'] ?>" alt="<?= $session['title'] ?>">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?= $session['title'] ?></h5>
+                                        <div class="scrollBox">
+                                            <p class="card-text"><?= $session['description'] ?></p>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="card-text"><small class="text-muted"><?= $session['duration'] ?> mins</small></p>
+                                            <a href="/movie/<?=$session[0]?>" class="btn btn-primary">Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php  } ?>
+            </div>
+        </div>
+    </div>
+
     <div class="align-content-center" xmlns:min="http://www.w3.org/1999/xhtml">
         <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
             <div class="col-lg-6 d-flex justify-content-center border pt-3 pb-3 align-content-center" >

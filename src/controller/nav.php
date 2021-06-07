@@ -89,15 +89,15 @@ function soon($addSessionData)
     if (isset($addSessionData['filmSession'])) {
         require_once "model/session_manager.php";
         addSession($addSessionData);
-        require_once "view/soon.php";
-        soonView();
 
-    } else {
-        require_once "model/movies.php";
-        $film = getAllMovies();
-        require_once "model/theaters.php";
-        $theater= getAllTheaters();
-        require_once "view/soon.php";
-        soonView($film,$theater);
     }
+    require_once "model/movies.php";
+    $film = getAllMovies();
+    require_once "model/theaters.php";
+    $theater = getAllTheaters();
+    require_once "model/sessions.php";
+    $sessions = getAllSessions();
+    require_once "view/soon.php";
+    soonView($sessions, $film, $theater);
+
 }

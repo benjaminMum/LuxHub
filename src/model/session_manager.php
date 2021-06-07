@@ -33,6 +33,6 @@ function addSession($addSessionData) {
 
 
     $query = "INSERT INTO `luxhub`.`sessions` (`Movies_id`, `Theaters_id`, `session_code`, `language`,`date`, `starting_hour`, `duration`) VALUES ($movie, $theater, $sessionCode, '$language','$date', '$hour', $duration);";
-echo $query;
+
     return executeQueryIUD($query);
 }
