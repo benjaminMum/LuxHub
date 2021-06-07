@@ -6,31 +6,20 @@
  * @version 0.1
  * @date 17.0.2021
  */
-require "model/dbConnector.php";
+require_once "model/dbConnector.php";
 
- function getAllMovies (){
-
+ function getAllMovies ()
+ {
     $sql = "SELECT * FROM movies";
 
-    //echo $sql;
-
-
-
     $res = executeQuerySelect($sql);
-
     return $res;
-
  }
 
- function getAMovie($movieID){
-
+ function getAMovie($movieID)
+ {
    $sql = "SELECT * FROM movies WHERE movie_code = $movieID";
-
-   //echo $sql;
-
-
    $res = executeQuerySelect($sql);
-
    return $res;
 
  }

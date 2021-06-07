@@ -52,7 +52,7 @@ function openDBConnexion()
     $charset = 'utf8';
     $dbName = 'luxhub';
     $userName = 'root';
-    $userPwd = 'Paluchon33';
+    $userPwd = '';
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try {
