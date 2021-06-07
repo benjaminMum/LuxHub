@@ -21,9 +21,6 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
     
     case '/':
-        home();
-        break;
-    
     case '/home':
         home();
         break;
@@ -41,7 +38,11 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/soon':
-        soon($_POST);
+        soon();
+        break;
+
+    case '/addSession':
+        addSession($_POST);
         break;
 
     case '/logout':

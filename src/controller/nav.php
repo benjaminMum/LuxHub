@@ -65,39 +65,48 @@ function lost()
 
 function displayAMovie($movieID)
 {
-
     require_once "model/movies.php";
     $movie = getAMovie($movieID);
 
     require_once "view/movie.php";
     showAMovieView($movie, $movieID);
-
 }
 
 function logout()
 {
-
     session_destroy();
-
     home();
-
 }
 
-function soon($addSessionData)
-{
+function addSession($addSessionData) {
+    require_once "model/session_manager.php";
+    require_once "model/movies.php";
+
+    $films = getAllMovies();
+    $theaters = getAllTheaters();
 
     if (isset($addSessionData['filmSession'])) {
-        require_once "model/session_manager.php";
-        addSession($addSessionData);
-
+        addSessionBD($addSessionData);
+        soon();
+    } else {
+        require_once "view/add_session.php";
+        addSessionView($films, $theaters);
     }
-    require_once "model/movies.php";
-    $film = getAllMovies();
-    require_once "model/theaters.php";
-    $theater = getAllTheaters();
-    require_once "model/sessions.php";
-    $sessions = getAllSessions();
+}
+
+function soon()
+{
+    require_once "model/user_manager.php";
+    require_once "model/session_manager.php";
     require_once "view/soon.php";
-    soonView($sessions, $film, $theater);
+
+    $sessions = getAllSessions();
+
+    if(isset($_SESSION['email'])) {
+        $userRight = getUserType($_SESSION['email']);
+        soonView($sessions, $userRight[0][0]);
+    } else {
+        soonView($sessions);
+    }
 
 }
