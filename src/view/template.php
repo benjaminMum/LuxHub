@@ -65,6 +65,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                                 <a href="/login" class="btn btn-secondary me-2">Se connecter</a>
                                 <a href="/register" class="btn btn-secondary me-2">S'enregister</a>
                             <?php } else { ?>
+                                <a href="/user" class="nav-link text-white <?= (@$currentNav == "User") ? "active" : "" ?>" aria-current="page" >Votre compte</a>
                                 <a href="/logout" class="btn btn btn-secondary">Se déconnecter</a>
                             <?php } ?>
                         </div>
