@@ -41,7 +41,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/soon':
-        soon();
+        soon($_POST);
         break;
 
     case '/logout':

@@ -6,7 +6,7 @@
  * @version 0.1
  * @date 17.0.2021
  */
-
+require "model/dbConnector.php";
 
  function getAllMovies (){
 
@@ -14,7 +14,7 @@
 
     //echo $sql;
 
-    require_once "model/dbConnector.php";
+
 
     $res = executeQuerySelect($sql);
 
@@ -28,7 +28,6 @@
 
    //echo $sql;
 
-   require_once "model/dbConnector.php";
 
    $res = executeQuerySelect($sql);
 

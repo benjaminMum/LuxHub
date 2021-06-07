@@ -1,16 +1,18 @@
 <?php
 
-function home($res = null){
+function home($res = null)
+{
     require_once "model/movies.php";
     $movies = getAllMovies();
     require_once "view/home.php";
     homeView($movies, $res);
 }
 
-function login($userData){
+function login($userData)
+{
     require_once "model/user_manager.php";
     if (isset($userData['loginEmail'])) {
-        if(loginUser($userData)) {
+        if (loginUser($userData)) {
             $_SESSION['email'] = $userData ['loginEmail'];
             home();
         } else {
@@ -24,16 +26,17 @@ function login($userData){
     }
 }
 
-function register($userData){
+function register($userData)
+{
     require_once "model/user_manager.php";
     if (isset($userData['registerEmail'])) {
-        if(verifyUser($userData['registerEmail']) == false) {
-            if($userData['registerPsw'] == $userData['registerConfirmPsw']) {
-                if (registerUser($userData)){
+        if (verifyUser($userData['registerEmail']) == false) {
+            if ($userData['registerPsw'] == $userData['registerConfirmPsw']) {
+                if (registerUser($userData)) {
                     $res = "Vous avez bien été enregistré.";
                     $_SESSION['email'] = $_POST['registerEmail'];
                     home($res);
-                }else{
+                } else {
                     $err = "L'insertion dans la base de données a échoué.";
                     registerView($err);
                 }
@@ -54,12 +57,14 @@ function register($userData){
 
 }
 
-function lost(){
+function lost()
+{
     require_once "view/lost.php";
     lostView();
 }
 
-function displayAMovie($movieID){
+function displayAMovie($movieID)
+{
 
     require_once "model/movies.php";
     $movie = getAMovie($movieID);
@@ -69,7 +74,8 @@ function displayAMovie($movieID){
 
 }
 
-function logout(){
+function logout()
+{
 
     session_destroy();
 
@@ -77,7 +83,21 @@ function logout(){
 
 }
 
-function soon(){
-    require_once "view/soon.php";
-soonView();
+function soon($addSessionData)
+{
+
+    if (isset($addSessionData['filmSession'])) {
+        require_once "model/session_manager.php";
+        addSession($addSessionData);
+        require_once "view/soon.php";
+        soonView();
+
+    } else {
+        require_once "model/movies.php";
+        $film = getAllMovies();
+        require_once "model/theaters.php";
+        $theater= getAllTheaters();
+        require_once "view/soon.php";
+        soonView($film,$theater);
+    }
 }
