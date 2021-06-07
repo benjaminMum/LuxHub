@@ -5,7 +5,7 @@
  *
  */
 
-require "model/dbConnector.php";
+require_once "model/dbConnector.php";
 
 /**
  * @return string The new code for the user
@@ -85,4 +85,9 @@ function loginUser($loginData) {
 
     return $success;
 
+}
+
+function getUserType($userEmail) {
+    $query = "SELECT `Account_type_id` FROM `luxhub`.`people` WHERE  `email` = '$userEmail'";
+    return executeQuerySelect($query);
 }
