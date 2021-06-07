@@ -15,9 +15,9 @@ function userView($uData)
 
     <div class="pt-4 mx-auto col-4 text-center">
         <p class="name-style"><?= $uData['firstname']?> <?= $uData['lastname']?></p>
-        <p>E-Mail : <?= $uData['email']?></p>
+        <p><strong>E-Mail</strong> : <?= $uData['email']?></p>
 
-        <p>Date de naissance : <?= $uData['birthdate']?></p>
+        <p><strong>Date de naissance</strong> : <?= $uData['birthdate']?></p>
         <button class="btn btn-secondary text-center"><a href="/modifyUser" class="text-white">Modifier</a></button>
     </div>
 
