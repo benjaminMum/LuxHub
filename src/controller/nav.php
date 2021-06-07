@@ -137,3 +137,15 @@ function addMovie($movieData, $files)
         addMovieView();
     }
 }
+
+function myBookings(){
+
+    require_once "model/bookings.php";
+
+    $bookings = getSpecificBookings($_SESSION['email']);
+
+    require_once "view/reservation.php";
+
+    reservationView($bookings);
+
+}

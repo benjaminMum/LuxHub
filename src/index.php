@@ -47,4 +47,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/addMovie':
         addMovie(@$_POST, @$_FILES);
         break;
+    case '/myBookings':
+        myBookings();
+        break;
 }

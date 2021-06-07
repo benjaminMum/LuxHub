@@ -57,7 +57,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                                 <a class="nav-link <?= (@$currentNav == "soon") ? "active" : "" ?>" aria-current="page" href="#">Prochainement</a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link<?= (@$currentNav == "myBookings") ? "active" : "" ?>" aria-current="page">Mes réservations</a>
+                                <a class="nav-link <?= (@$currentNav == "myBookings") ? "active" : "" ?>" aria-current="page" href="/myBookings">Mes réservations</a>
                             </li>
                         </ul>
                         <div class="col-12 col-md-8 d-flex justify-content-md-end mt-2 mt-md-0 gx-0">
@@ -65,7 +65,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                                 <a href="/login" class="btn btn-secondary me-2">Se connecter</a>
                                 <a href="/register" class="btn btn-secondary me-2">S'enregister</a>
                             <?php } else { ?>
-                                <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a> 
+                                <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a>
                                 <a href="/logout" class="btn btn-secondary me-2">Se déconnecter</a>
                             <?php } ?>
                         </div>
