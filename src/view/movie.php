@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file aMovie.php
+ * @file movie.php
  * @author Created by Benjamin.Fontana@cpnv.ch
  * @version 0.1 / 18.05.2021
  */
@@ -13,14 +13,10 @@ function showAMovieView($movie, $movieID)
     ob_start();
 ?>
 
-    <!-- <pre>
-    <?= print_r($movie) ?>
-    </pre> -->
     <div>
         <div class="d-flex justify-content-center">
             <div>
-
-                <img src=" <?= $movie[0]['thumbnails'] ?>" alt="<?= $movie[0]['title'] ?>">
+                <img src="<?=$movie[0]['thumbnails']?>" alt="<?= $movie[0]['title'] ?>">
 
             </div>
 
