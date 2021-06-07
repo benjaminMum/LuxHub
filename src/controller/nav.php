@@ -8,6 +8,47 @@ function home($res = null)
     homeView($movies, $res);
 }
 
+
+function modifyUser($code, $modifyData) {
+    require_once "model/user_manager.php";
+
+    if(isset($_SESSION['email'])) {
+        if(isset($code['id'])) {
+            if($modifyData['modifyPsw'] == $modifyData['modifyConfirmPsw'])  {
+                if(modifyUserDB($code['id'], $modifyData)) {
+                    $res = "Vos informations ont bien été modifiées.";
+                    home($res);
+                }
+            } else {
+                $err = "Les mots de passes ne correspondent pas.";
+                $userData = getUserData($_SESSION['email']);
+                require_once "view/modify-user.php";
+                modifyUserView($err, $userData);
+            }
+
+        } else {
+            $userData = getUserData($_SESSION['email']);
+            require_once "view/modify-user.php";
+            modifyUserView(NULL, $userData);
+        }
+    } else {
+        home();
+    }
+}
+
+function displayUser() {
+    require_once "model/user_manager.php";
+    if(isset($_SESSION['email'])) {
+        $userData = getUserData($_SESSION['email']);
+        require_once "view/user.php";
+        userView($userData);
+    } else {
+        home();
+    }
+
+}
+
+
 function login($userData)
 {
     require_once "model/user_manager.php";
