@@ -77,7 +77,8 @@ function logout()
 
     session_destroy();
 
-    home();
+    header("location:/home");
+    
 }
 
 function addMovie($movieData, $files)
