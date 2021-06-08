@@ -35,7 +35,7 @@ insert into account_type (name) values
 ('administrateur');
 
 insert into people (Account_type_id, client_code, lastname, firstname, email, password, birthdate) values 
-(1, 1, 'Midford', 'Irina', 'imidford0@dailymail.co.uk', 'Pa$$w0rd', '1994-08-20'),
+(4, 1, 'ADMIN', 'ADMIN', 'admin@cpnv.ch', '$2y$10$BHKU0PuTL7h9i60yB4he6uIN366DZNhOm1neBnbbzBBwv9t.lJWMO', '1994-08-20'),
 (3, 2, 'Spaughton', 'Robbert', 'rspaughton1@ebay.co.uk', 'Pa$$w0rd', '2004-08-08'),
 (2, 3, 'Faye', 'Richardo', 'rfaye2@mlb.com', 'Pa$$w0rd', '1963-05-12'),
 (1, 4, 'Jeffery', 'Happy', 'hjeffery3@arstechnica.com', 'Pa$$w0rd', '1964-07-02'),
