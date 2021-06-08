@@ -8,7 +8,6 @@ function home($res = null)
     homeView($movies, $res);
 }
 
-
 function modifyUser($code, $modifyData) {
     require_once "model/user_manager.php";
 
@@ -48,14 +47,15 @@ function displayUser() {
 
 }
 
-
 function login($userData)
 {
     require_once "model/user_manager.php";
     if (isset($userData['loginEmail'])) {
         if (loginUser($userData)) {
             $_SESSION['email'] = $userData['loginEmail'];
-            home();
+            $userRight = getUserType($userData['loginEmail']);
+            $_SESSION['type'] = $userRight[0][0];
+            soon();
         } else {
             require_once "view/login.php";
             $err = "Votre email ou votre mot de passe n'est pas valide.";
@@ -76,6 +76,8 @@ function register($userData)
                 if (registerUser($userData)) {
                     $res = "Vous avez bien été enregistré.";
                     $_SESSION['email'] = $_POST['registerEmail'];
+                    $userRight = getUserType($userData['loginEmail']);
+                    $_SESSION['type'] = $userRight[0][0];
                     home($res);
                 } else {
                     $err = "L'insertion dans la base de données a échoué.";
@@ -105,7 +107,6 @@ function lost()
 
 function displayAMovie($movieID)
 {
-
     require_once "model/movies.php";
     $movie = getAMovie($movieID);
 
@@ -115,16 +116,44 @@ function displayAMovie($movieID)
 
 function logout()
 {
-
     session_destroy();
+    home();
+}
 
+function addSession($addSessionData) {
+    require_once "model/session_manager.php";
+    require_once "model/movies.php";
+
+    $films = getAllMovies();
+    $theaters = getAllTheaters();
+
+    if (isset($addSessionData['filmSession'])) {
+        addSessionBD($addSessionData);
+        soon();
+    } else {
+        require_once "view/add_session.php";
+        addSessionView($films, $theaters);
+    }
+}
+
+function soon()
+{
+    require_once "model/session_manager.php";
+    require_once "view/soon.php";
+
+    $sessions = getAllSessions();
+
+    if(isset($_SESSION['email'])) {
+        soonView($sessions, $_SESSION['type']);
+    } else {
+        soonView($sessions);
+    }
     header("location:/home");
     
 }
 
 function addMovie($movieData, $files)
 {
-
     $success = false;
 
     require_once "view/addMovie.php";

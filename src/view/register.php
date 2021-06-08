@@ -26,11 +26,11 @@ function registerView($err = null)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewEmailAddress">E-Mail</label>
-                                <input type="email" name="registerEmail" id="inputNewEmailAddress" required>
+                                <input type="email" name="registerEmail" id="inputNewEmailAddress" tabindex="1" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewPsw">Mot de passe</label><br>
-                                <input type="password" name="registerPsw" id="inputNewPsw" required>
+                                <input type="password" name="registerPsw" id="inputNewPsw" tabindex="4" required>
                             </div>
                         </div>
 
@@ -39,12 +39,12 @@ function registerView($err = null)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewFirstName">Prénom</label>
-                                <input type="text" name="registerFirstname" id="inputNewFirstName" required>
+                                <input type="text" name="registerFirstname" id="inputNewFirstName" tabindex="2" required>
                             </div>
 
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputConfirmPsw">Confirmer mot de passe</label><br>
-                                <input type="password" name="registerConfirmPsw" id="inputConfirmPsw" required>
+                                <input type="password" name="registerConfirmPsw" id="inputConfirmPsw" tabindex="5" required>
                             </div>
                         </div>
 
@@ -53,11 +53,11 @@ function registerView($err = null)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewLastName">Nom</label><br>
-                                <input type="text" name="registerLastname" id="inputNewLastName" required>
+                                <input type="text" name="registerLastname" id="inputNewLastName" tabindex="3" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewBirthDate">Date de naissance</label><br>
-                                <input type="date" name="registerBirthdate" id="inputNewBirthDate" required>
+                                <input type="date" name="registerBirthdate" id="inputNewBirthDate" tabindex="6" required>
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@ function registerView($err = null)
                                 <input type="reset" value="Effacer">
                             </div>
                             <div class="col-lg-6 col-sm-6">
-                                <input type="submit" value="S'inscrire">
+                                <input type="submit" value="S'inscrire" tabindex="7">
                             </div>
                         </div>
 

@@ -54,7 +54,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                                 <a class="nav-link <?= (@$currentNav == "home") ? "active" : "" ?>" aria-current="page" href="/home">Accueil</a>
                             </li>
                             <li>
-                                <a class="nav-link <?= (@$currentNav == "soon") ? "active" : "" ?>" aria-current="page" href="#">Prochainement</a>
+                                <a class="nav-link <?= (@$currentNav == "soon") ? "active" : "" ?>" aria-current="page" href="/soon">Prochainement</a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link<?= (@$currentNav == "myBookings") ? "active" : "" ?>" aria-current="page">Mes réservations</a>
