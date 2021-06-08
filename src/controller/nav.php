@@ -13,7 +13,9 @@ function login($userData)
     require_once "model/user_manager.php";
     if (isset($userData['loginEmail'])) {
         if (loginUser($userData)) {
-            $_SESSION['email'] = $userData ['loginEmail'];
+            $_SESSION['email'] = $userData['loginEmail'];
+            $userRight = getUserType($userData['loginEmail']);
+            $_SESSION['type'] = $userRight[0][0];
             home();
         } else {
             require_once "view/login.php";
@@ -35,6 +37,8 @@ function register($userData)
                 if (registerUser($userData)) {
                     $res = "Vous avez bien été enregistré.";
                     $_SESSION['email'] = $_POST['registerEmail'];
+                    $userRight = getUserType($userData['loginEmail']);
+                    $_SESSION['type'] = $userRight[0][0];
                     home($res);
                 } else {
                     $err = "L'insertion dans la base de données a échoué.";
@@ -103,8 +107,7 @@ function soon()
     $sessions = getAllSessions();
 
     if(isset($_SESSION['email'])) {
-        $userRight = getUserType($_SESSION['email']);
-        soonView($sessions, $userRight[0][0]);
+        soonView($sessions, $_SESSION['type']);
     } else {
         soonView($sessions);
     }

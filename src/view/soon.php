@@ -44,11 +44,11 @@ function soonView($sessions=null,$userRights=null)
                                     <div class="card-body">
                                         <h5 class="card-title"><?= $session['title'] ?></h5>
                                         <div class="scrollBox">
-                                            <p class="card-text"><?= $session['description'] ?></p>
+                                            <p class="card-text">Date : <?= $session['date'] ?></p>
                                         </div>
                                         <div class="d-flex justify-content-between">
-                                            <p class="card-text"><small class="text-muted"><?= $session['duration'] ?> mins</small></p>
-                                            <a href="/movie/<?=$session[0]?>" class="btn btn-primary">Info</a>
+                                            <p class="card-text"><small class="text-muted">Heure : <?= $session['starting_hour'] ?></small></p>
+                                            <a href="/session/<?=$session[3] // /!\ THIS LINK MIGHT HAVE TO BE MODIFIED LATER> ?>" class="btn btn-primary">Info</a>
                                         </div>
                                     </div>
                                 </div>
