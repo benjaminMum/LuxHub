@@ -6,7 +6,7 @@
  * @version 0.1 / 29.04.2021
  */
 
-function renderTemplate($title = null, $content = null, $currentNav = null, $head = null, $favicon = null)
+function renderTemplate($title = null, $content = null, $currentNav = null, $head = null, $scripts = null, $favicon = null)
 {
 ?>
     <!DOCTYPE html>
@@ -66,7 +66,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                                 <a href="/register" class="btn btn-secondary me-2">S'enregister</a>
                             <?php } else { ?>
                                 <a href="/user" class="btn btn-secondary me-2">Votre compte</a>
-                                <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a> 
+                                <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a>
                                 <a href="/logout" class="btn btn-secondary me-2">Se déconnecter</a>
                             <?php } ?>
                         </div>
@@ -82,6 +82,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
         <footer>
 
             <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+            <?= $scripts ?? "" ?>
 
         </footer>
     </body>

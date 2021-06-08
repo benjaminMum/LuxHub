@@ -55,7 +55,13 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/addMovie':
         addMovie(@$_POST, @$_FILES);
         break;
+
     case '/myBookings':
         myBookings();
+        break;
+
+    case '/createBooking':
+        $sessionCode = "4343036707";
+        createBooking($sessionCode);
         break;
 }

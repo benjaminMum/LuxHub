@@ -190,3 +190,16 @@ function myBookings(){
     reservationView($bookings);
 
 }
+
+function createBooking($sessionCode){
+
+    require_once "model/bookings.php";
+
+    $rowLine = getNumbersOfSeats($sessionCode);
+
+    $data = getSessionData($sessionCode);
+
+    require_once "view/makeAReservation.php";
+
+    showBooking($rowLine, $data);
+}

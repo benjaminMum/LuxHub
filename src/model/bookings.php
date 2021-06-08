@@ -13,3 +13,31 @@ function getSpecificBookings($email)
 
     return $res;
 }
+
+function getNumbersOfSeats($sessionCode){
+
+    $sql = "SELECT sessions.Theaters_id, theaters.`columns`, theaters.line FROM sessions INNER JOIN theaters ON sessions.Theaters_id=theaters.id WHERE sessions.session_code = $sessionCode";
+
+    //echo $sql
+
+    require_once "model/dbConnector.php";
+
+    $res = executeQuerySelect($sql);
+
+    return $res;
+
+}
+
+function getSessionData($sessionCode){
+
+    $sql = "SELECT * FROM seats INNER JOIN reservations ON seats.Reservations_id=reservations.id INNER JOIN sessions ON reservations.Sessions_id = sessions.id WHERE sessions.session_code = $sessionCode";
+    
+    //echo $sql;
+    
+    require_once "model/dbConnector.php";
+
+    $res = executeQuerySelect($sql);
+
+    return $res;
+
+}
