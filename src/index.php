@@ -44,8 +44,20 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/addSession':
         addSession($_POST);
         break;
+    
+    case '/user':
+        displayUser();
+        break;
+
+    case '/modifyUser':
+        modifyUser($_GET, $_POST);
+        break;
 
     case '/logout':
         logout();
+        break;
+
+    case '/addMovie':
+        addMovie(@$_POST, @$_FILES);
         break;
 }

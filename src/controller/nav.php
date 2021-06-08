@@ -8,6 +8,45 @@ function home($res = null)
     homeView($movies, $res);
 }
 
+function modifyUser($code, $modifyData) {
+    require_once "model/user_manager.php";
+
+    if(isset($_SESSION['email'])) {
+        if(isset($code['id'])) {
+            if($modifyData['modifyPsw'] == $modifyData['modifyConfirmPsw'])  {
+                if(modifyUserDB($code['id'], $modifyData)) {
+                    $res = "Vos informations ont bien été modifiées.";
+                    home($res);
+                }
+            } else {
+                $err = "Les mots de passes ne correspondent pas.";
+                $userData = getUserData($_SESSION['email']);
+                require_once "view/modify-user.php";
+                modifyUserView($err, $userData);
+            }
+
+        } else {
+            $userData = getUserData($_SESSION['email']);
+            require_once "view/modify-user.php";
+            modifyUserView(NULL, $userData);
+        }
+    } else {
+        home();
+    }
+}
+
+function displayUser() {
+    require_once "model/user_manager.php";
+    if(isset($_SESSION['email'])) {
+        $userData = getUserData($_SESSION['email']);
+        require_once "view/user.php";
+        userView($userData);
+    } else {
+        home();
+    }
+
+}
+
 function login($userData)
 {
     require_once "model/user_manager.php";
@@ -16,7 +55,7 @@ function login($userData)
             $_SESSION['email'] = $userData['loginEmail'];
             $userRight = getUserType($userData['loginEmail']);
             $_SESSION['type'] = $userRight[0][0];
-            home();
+            soon();
         } else {
             require_once "view/login.php";
             $err = "Votre email ou votre mot de passe n'est pas valide.";
@@ -58,7 +97,6 @@ function register($userData)
         require_once "view/register.php";
         registerView();
     }
-
 }
 
 function lost()
@@ -100,7 +138,6 @@ function addSession($addSessionData) {
 
 function soon()
 {
-    require_once "model/user_manager.php";
     require_once "model/session_manager.php";
     require_once "view/soon.php";
 
@@ -111,5 +148,62 @@ function soon()
     } else {
         soonView($sessions);
     }
+    header("location:/home");
+    
+}
 
+function addMovie($movieData, $files)
+{
+    $success = false;
+
+    require_once "view/addMovie.php";
+    if (!empty($movieData)) {
+        if (!empty($movieData["movieID"])) {
+            if (!empty($movieData["movieTitle"])) {
+                if (!empty($movieData["movieReleaseDate"])) {
+                    if (!empty($movieData["movieDuration"])) {
+                        if (!empty($movieData["movieDescription"])) {
+                            if (!empty($movieData["movieLegalAge"])) {
+                                if (!empty($movieData['movieTrailer'])) {
+                                    require_once "model/movies.php";
+                                    if (!isMovieAlreadyExist($movieData["movieID"])) {
+                                        // Save images
+                                        require_once "model/imagesManager.php";
+                                        $index = 0;
+                                        foreach ($files as $file) {
+                                            $result = saveImage($file, $movieData["movieID"]);
+                                            if ($result != 0) {
+                                                $imageNames[$index] = $result;
+                                                $index++;
+                                            }
+                                        }
+                                        writeAMovie($movieData);
+                                        $success = true;
+                                        home($res = "Le film a bien été ajouté");
+                                    } else {
+                                        addMovieView($err = "L'EIDR du film existe déjà");
+                                    }
+                                } else {
+                                    addMovieView($err = "Veuillez ajouter un lien vers la bande-annonce");
+                                }
+                            } else {
+                            }
+                        } else {
+                            addMovieView($err = "Veuillez ajouter une description");
+                        }
+                    } else {
+                        addMovieView($err = "Veuillez ajouter la durée du film");
+                    }
+                } else {
+                    addMovieView($err = "Veuillez ajouter la date de sortie du film");
+                }
+            } else {
+                addMovieView($err = "Veuillez ajouter le titre du film");
+            }
+        } else {
+            addMovieView($err = "Veuillez ajouter l'EIDR du film");
+        }
+    } else {
+        addMovieView();
+    }
 }
