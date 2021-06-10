@@ -1,6 +1,6 @@
 <?php
 
-function addSessionView($films=null,$theaters=null)
+function addSessionView($films=null,$theaters=null, $error=null)
 {
     $title = "Ajouter une session";
     $currentNav = "add_session";
@@ -10,6 +10,12 @@ function addSessionView($films=null,$theaters=null)
 
     ?>
 
+    <div>
+        <?php if (@isset($error)) { ?>
+            <p class="alert alert-danger"><?= $error ?></p>
+        <?php } ?>
+    </div>
+
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -17,6 +23,8 @@ function addSessionView($films=null,$theaters=null)
             </div>
         </div>
     </section>
+
+
 
     <div class="align-content-center" xmlns:min="http://www.w3.org/1999/xhtml">
         <div class="col-lg-12  div-wrapper d-flex justify-content-center ">

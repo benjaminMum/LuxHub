@@ -127,9 +127,29 @@ function addSession($addSessionData) {
     $films = getAllMovies();
     $theaters = getAllTheaters();
 
+    $formDate = $addSessionData['sessionDate'];
+    $currentDate = date('Y-m-d');
+    $currentTime = date('H:M');
+
     if (isset($addSessionData['filmSession'])) {
-        addSessionBD($addSessionData);
-        soon();
+        if($formDate > $currentDate) {
+            addSessionBD($addSessionData);
+            soon();
+        } elseif($formDate == $currentDate) {
+            if($addSessionData['sessionStart'] > $currentTime) {
+                addSessionBD($addSessionData);
+                soon();
+            } else {
+                $error = "L'heure fournie est déjà passée";
+                require_once "view/add_session.php";
+                addSessionView($films, $theaters, $error);
+            }
+        } else {
+            $error = "La date fournie précède le jour actuel.";
+            require_once "view/add_session.php";
+            addSessionView($films, $theaters, $error);
+        }
+
     } else {
         require_once "view/add_session.php";
         addSessionView($films, $theaters);
