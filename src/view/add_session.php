@@ -41,7 +41,7 @@ function addSessionView($films=null,$theaters=null, $error=null)
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionTheater">Salle</label><br>
-                            <select name="sessionTheater" id="inputSessionTheater" tabindex="4" class="col-8" required>
+                            <select name="sessionTheatre" id="inputSessionTheater" tabindex="4" class="col-8" required>
                                 <?php foreach ($theaters as $availableTheaters) :?>
                                     <option value="<?= $availableTheaters[0] ?>"><?= $availableTheaters[1] ?></option>
                                 <?php endforeach; ?>

@@ -120,38 +120,77 @@ function logout()
     home();
 }
 
+function compareTime($theatreTime,$formD ) {
+    $available = false;
+    $formDate = $formD['sessionDate'];
+
+    $endTimeForm = date("H:i", strtotime("+$formD[5] minutes", strtotime($formD['sessionStart'])));
+
+    foreach($theatreTime as $tData) {
+        // gets the end of the session
+        $endTimeDB = date("H:i", strtotime("+$tData[2] minutes", strtotime($tData[1])));
+        // only gets the session of form date
+        if($tData[0] == $formDate) {
+            // OK if the form starting time and the form ending time are before the starting of the session
+            if((strtotime($formD['sessionStart']) < $tData[1]) && ($endTimeForm < $tData[1])) {
+                $available = true;
+                // OK if the form starting time is after the ending time of the session
+            } elseif(strtotime($formD['sessionStart']) > $endTimeDB) {
+                $available = true;
+            } else {
+                $available = false;
+                break;
+            }
+        }
+    }
+    return $available;
+}
+
 function addSession($addSessionData) {
     require_once "model/session_manager.php";
     require_once "model/movies.php";
+    require_once "view/add_session.php";
 
     $films = getAllMovies();
     $theaters = getAllTheaters();
-
-    $formDate = $addSessionData['sessionDate'];
     $currentDate = date('Y-m-d');
-    $currentTime = date('H:M');
 
     if (isset($addSessionData['filmSession'])) {
+        $formDate = $addSessionData['sessionDate'];
+        $theatreTime = getTimeOfTheatre((int)$addSessionData['sessionTheatre']);
+        $available = compareTime($theatreTime, $addSessionData);
+
         if($formDate > $currentDate) {
-            addSessionBD($addSessionData);
-            soon();
+            // gets the time information of all the sessions using the same theatre
+            $available = compareTime($theatreTime, $addSessionData);
+
         } elseif($formDate == $currentDate) {
+            $currentTime = date('H:i');
+
             if($addSessionData['sessionStart'] > $currentTime) {
-                addSessionBD($addSessionData);
-                soon();
+                $available = compareTime($theatreTime, $addSessionData);
             } else {
                 $error = "L'heure fournie est déjà passée";
-                require_once "view/add_session.php";
                 addSessionView($films, $theaters, $error);
             }
+
         } else {
-            $error = "La date fournie précède le jour actuel.";
-            require_once "view/add_session.php";
+            $error = "La date fournie est déjà passée";
             addSessionView($films, $theaters, $error);
         }
 
+        // verification
+        if (isset($available)) {
+            if ($available == true) {
+                addSessionBD($addSessionData);
+                soon();
+            } else {
+                $error = "La salle est déjà utilisée à cette heure là";
+                addSessionView($films, $theaters, $error);
+            }
+        }
+
     } else {
-        require_once "view/add_session.php";
         addSessionView($films, $theaters);
     }
 }
@@ -168,7 +207,6 @@ function soon()
     } else {
         soonView($sessions);
     }
-    header("location:/home");
     
 }
 
