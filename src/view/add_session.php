@@ -59,7 +59,7 @@ function addSessionView($films=null,$theaters=null, $error=null)
 
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionDate">Date de la séance</label><br>
-                            <input type="date" name="sessionDate" id="inputSessionDate" tabindex="5" class="col-8" min="<?php echo date('Y-m-d'); ?>" required>
+                            <input type="date" name="sessionDate" id="inputSessionDate" tabindex="5" class="col-8" min="<?= date('Y-m-d') ?>" required>
                         </div>
                     </div>
 
