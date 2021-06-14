@@ -121,10 +121,11 @@ function logout()
 }
 
 function compareTime($theatreTime,$formD ) {
-    $available = false;
+    $available = true;
     $formDate = $formD['sessionDate'];
 
-    $endTimeForm = date("H:i", strtotime("+$formD[5] minutes", strtotime($formD['sessionStart'])));
+    $formDuration = $formD['sessionDuration'];
+    $endTimeForm = date("H:i", strtotime("+$formDuration minutes", strtotime($formD['sessionStart'])));
 
     foreach($theatreTime as $tData) {
         // gets the end of the session
@@ -134,8 +135,8 @@ function compareTime($theatreTime,$formD ) {
             // OK if the form starting time and the form ending time are before the starting of the session
             if((strtotime($formD['sessionStart']) < $tData[1]) && ($endTimeForm < $tData[1])) {
                 $available = true;
-                // OK if the form starting time is after the ending time of the session
-            } elseif(strtotime($formD['sessionStart']) > $endTimeDB) {
+            // OK if the form starting time is after the ending time of the session
+            } elseif(strtotime($formD['sessionStart']) >= strtotime($endTimeDB)) {
                 $available = true;
             } else {
                 $available = false;
@@ -158,7 +159,6 @@ function addSession($addSessionData) {
     if (isset($addSessionData['filmSession'])) {
         $formDate = $addSessionData['sessionDate'];
         $theatreTime = getTimeOfTheatre((int)$addSessionData['sessionTheatre']);
-        $available = compareTime($theatreTime, $addSessionData);
 
         if($formDate > $currentDate) {
             // gets the time information of all the sessions using the same theatre
