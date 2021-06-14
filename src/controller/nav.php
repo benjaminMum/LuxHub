@@ -165,6 +165,7 @@ function addSession($addSessionData) {
             $available = compareTime($theatreTime, $addSessionData);
 
         } elseif($formDate == $currentDate) {
+            date_default_timezone_set('Europe/Paris');
             $currentTime = date('H:i');
 
             if($addSessionData['sessionStart'] > $currentTime) {
