@@ -43,27 +43,24 @@ function showBooking($seats, $data)
                 </div>
             </div>
         </section>
-        <pre><?=
-                print_r($data);
-                ?>
-                        </pre>
+
+        <!-- <pre>
+        <?= print_r($data); ?>
+        </pre> -->
 
         <div class="align-content-center">
             <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
                 <div class="col-lg-6 d-flex justify-content-center border pt-3 pb-3 align-content-center">
-                    <form action="/register" method="post">
+                    <form action="/writeBooking" method="post">
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="bookingFilm">Film</label>
-                                <input type="texte" name="bookingFilm" id="bookingFilm" required>
+                                <br>
+                                <input type="text" name="bookingFilm" id="bookingFilm" readonly value="<?= $data[0]['session_code'] ?>">
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="bookingLanguage">Langue</label><br>
-                                <select name="bookingLanguage" id="bookingLanguage">
-                                    <option value="vf">vf</option>
-                                    <option value="vo">vo</option>
-                                    <option value="vostfr">vostfr</option>
-                                </select>
+                                <input type="text" name="bookingLanguage" id="bookingLanguage" readonly value="<?= $data[0]['language'] ?>">
                             </div>
                         </div>
 
@@ -72,12 +69,13 @@ function showBooking($seats, $data)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="bookingDate">Date</label>
-                                <input type="text" name="bookingDate" id="bookingDate" required>
+                                <br>
+                                <input type="text" name="bookingDate" id="bookingDate" readonly value="<?= $data[0]['date'] ?>">
                             </div>
 
                             <div class="col-lg-6 col-sm-6">
                                 <label for="bookingHour">Heure</label><br>
-                                <input type="text" name="bookingHour" id="bookingHour" required>
+                                <input type="text" name="bookingHour" id="bookingHour" readonly value="<?= $data[0]['starting_hour'] ?>">
                             </div>
                         </div>
 
@@ -86,11 +84,13 @@ function showBooking($seats, $data)
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewLastName">Salle</label><br>
-                                <input type="text" name="registerLastname" id="inputNewLastName" required>
+                                <input type="text" name="registerLastname" id="inputNewLastName" readonly value="<?= $data[0]['Theaters_id'] ?>">
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewBirthDate">Siège(s) seléctionné(s)</label><br>
-                                <input name="seats" id="seats">
+                                <input name="seats" id="seats" readonly>
+                                <input type="hidden" name="session_code" id="session_code" readonly value="<?= $data[0]['session_code'] ?>">
+                                <input type="hidden" name="email" id="email" readonly value="<?= $_SESSION['email'] ?>">
                             </div>
                         </div>
 
@@ -100,32 +100,39 @@ function showBooking($seats, $data)
                             $letter = 'A';
                             for ($i = 1; $i <= $seats[0]['line']; $i++) {
                                 for ($l = 1; $l <= $seats[0]['columns']; $l++) {
-                                    foreach ($data as $seat){
-                                        if ($seat['Name'] = "$letter . $l"){
-                                            $yes = true;                                          
+                                    $seatName = $letter . $l;
+
+                                    $reserved = false;
+
+                                    foreach ($data as $obj) {
+                                        if ($obj[2] == $seatName) {
+                                            $reserved = true;
                                         }
                                     }
+                                    if ($reserved) {
                             ?>
-                                    <input type="button" id="<?=$letter . $l?>" class="seat" value="<?= $letter . $l ?>">
-                                <?php
+                                        <input type="button" id="<?= $seatName ?>" class="seat reserved" value="<?= $seatName ?>">
+                            <?php } else { ?>
+                                <input type="button" id="<?= $seatName ?>" class="seat" value="<?= $seatName ?>">
+                        <?php }
                                 }
                                 $letter++;
-                                ?>
-                                <br>
-                            <?php
+                        ?>
+                        <br>
+                    <?php
                             } ?>
-                        </div>
-                        <br>
-                        <br>
+                            </div>
+                            <br>
+                            <br>
 
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6 text-end pe-5 ">
-                                <input type="reset" value="Effacer">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6 text-end pe-5 ">
+                                    <input type="reset" value="Effacer">
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <input type="submit" value="Réserver">
+                                </div>
                             </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <input type="submit" value="S'inscrire">
-                            </div>
-                        </div>
 
                     </form>
                 </div>
@@ -141,7 +148,7 @@ function showBooking($seats, $data)
     ob_start();
     ?>
 
-    <script type="module" src="view/js/bookingSeats.js"></script>
+    <script type="module" src="/view/js/bookingSeats.js"></script>
 
 <?php
     $scripts = ob_get_clean();

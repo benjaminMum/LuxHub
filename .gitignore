@@ -6,3 +6,4 @@ doc/Testsheet.html
 .idea
 src/.idea
 src/view/content/img
+.markdownlint.json

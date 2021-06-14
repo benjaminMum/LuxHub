@@ -35,7 +35,7 @@ function reservationView($bookings)
                                     <p class="card-text">Salle: <?= $bookings[$i]['name'] ?></p>
                                     <p class="card-text">Place: <?= $bookings[$i]['Name'] ?></p>
                                     <div class="d-flex justify-content-end">
-                                        <a href="#" class="btn btn-primary">Info</a>
+                                        <a href="/showSession/<?= $bookings[$i]['session_code'] ?>" class="btn btn-primary">Info</a>
                                     </div>
                                 </div>
                             </div>

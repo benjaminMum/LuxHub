@@ -60,8 +60,16 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         myBookings();
         break;
 
-    case '/createBooking':
-        $sessionCode = "4343036707";
-        createBooking($sessionCode);
+    case (preg_match('/^\/createBooking\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        createBooking($res[1]);
         break;
+
+    case '/writeBooking':
+        writeBooking($_POST);
+        break;
+    
+    case (preg_match('/^\/showSession\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        displayASession($res[1]);
+        break;
+        
 }

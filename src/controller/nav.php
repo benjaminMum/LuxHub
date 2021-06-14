@@ -202,4 +202,49 @@ function createBooking($sessionCode){
     require_once "view/makeAReservation.php";
 
     showBooking($rowLine, $data);
+
+}
+
+function writeBooking($reservationData){
+
+    require_once "model/bookings.php";
+
+    require_once "model/user_manager.php";
+
+    $people = getUserData($reservationData['email']);
+
+    $lastResId = getLastReservationId();
+
+    $reservationID = 1;
+
+    $reservationID += $lastResId[0]['reservation_code'];
+
+    $seats = explode(",", $reservationData['seats']);
+
+    $sessionId = getSessionId($reservationData['session_code']);
+
+    writeReservation($people['id'], $sessionId[0]['id'], $reservationID);
+
+    foreach ($seats as $seat){
+
+        writeReservation($people['id'], $sessionId[0]['id'], $reservationID, $seat, false);
+
+    }
+
+    myBookings();
+
+}
+
+function displayASession($sessionCode){
+
+    require_once "view/session.php";
+
+    require_once "model/bookings.php";
+
+    $data = getAllSessionData($sessionCode);
+
+    showASession($data);
+
+
+
 }

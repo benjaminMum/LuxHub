@@ -74,7 +74,7 @@ function seatClick(seat) {
         }
 
     } else {
-        alert("This seat is reserved!\nPlease select another seat");
+        alert("Ce siège est déjà réservé!\nMerci de sélectionner un autre siège.");
         removeSeat(document.getElementById('seats'), seat.value);
         return;
     }
