@@ -54,12 +54,12 @@ function addSessionView($films=null,$theaters=null, $error=null)
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionLanguage">Langue</label>
-                            <input type="text" name="sessionLanguage" placeholder="Par ex. FR" id="inputSessionLanguage" tabindex="2" maxlength="2" required>
+                            <input type="text" name="sessionLanguage" placeholder="Par ex. FR" id="inputSessionLanguage" tabindex="2" maxlength="2" pattern="[A-Z]{2}" required>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionDate">Date de la séance</label><br>
-                            <input type="date" name="sessionDate" id="inputSessionDate" tabindex="5" class="col-8" required>
+                            <input type="date" name="sessionDate" id="inputSessionDate" tabindex="5" class="col-8" min="<?php echo date('Y-m-d'); ?>" required>
                         </div>
                     </div>
 
