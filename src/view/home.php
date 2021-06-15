@@ -15,9 +15,10 @@ function homeView($movies, $res)
     ?>
 
     <main>
-        <?php if(isset($res)){  ?>
+        <?php //print_r($_SESSION)?>
+        <?php if(isset($res)) : ?>
         <p class="alert alert-success"><?=$res?></p>
-        <?php } ?>
+        <?php endif;?>
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">

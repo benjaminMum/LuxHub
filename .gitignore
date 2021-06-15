@@ -7,3 +7,6 @@ doc/Testsheet.html
 src/.idea
 src/view/content/img
 .markdownlint.json
+src/view/content/img/thumbnail/*.jpg
+src/view/content/img/original/*.jpg
+

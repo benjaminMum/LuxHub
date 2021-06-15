@@ -8,13 +8,13 @@
 
 function renderTemplate($title = null, $content = null, $currentNav = null, $head = null, $scripts = null, $favicon = null)
 {
-?>
+    ?>
     <!DOCTYPE html>
     <html lang="fr" class="h-100">
-
+    <meta charset="UTF-8">
     <head>
 
-        <meta charset="UTF-8">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
@@ -71,14 +71,16 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                             <?php } ?>
                         </div>
                     </div>
-            </nav>
-        </header>
+                </div>
+        </nav>
+    </header>
 
-        <main>
-            <?php /** Content defined in views */ ?>
-            <?= $content ?? "<h1>bad dev forgot to add content</h1>" ?>
+    <main>
+        <?php /** Content defined in views */ ?>
+        <?= $content ?? "<h1>bad dev forgot to add content</h1>" ?>
 
-        </main>
+    </main>
+      
         <footer class="footer mt-3 py-3 bg-dark text-center">
 
             <div class="d-flex justify-content-center">
@@ -90,9 +92,9 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
             <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
             <?= $scripts ?? "" ?>
 
-        </footer>
+          </footer>
     </body>
 
     </html>
-<?php
+    <?php
 }

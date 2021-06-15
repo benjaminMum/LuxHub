@@ -8,7 +8,6 @@ function home($res = null)
     homeView($movies, $res);
 }
 
-
 function modifyUser($code, $modifyData) {
     require_once "model/user_manager.php";
 
@@ -48,14 +47,15 @@ function displayUser() {
 
 }
 
-
 function login($userData)
 {
     require_once "model/user_manager.php";
     if (isset($userData['loginEmail'])) {
         if (loginUser($userData)) {
             $_SESSION['email'] = $userData['loginEmail'];
-            home();
+            $userRight = getUserType($userData['loginEmail']);
+            $_SESSION['type'] = $userRight[0][0];
+            soon();
         } else {
             require_once "view/login.php";
             $err = "Votre email ou votre mot de passe n'est pas valide.";
@@ -76,6 +76,8 @@ function register($userData)
                 if (registerUser($userData)) {
                     $res = "Vous avez bien été enregistré.";
                     $_SESSION['email'] = $_POST['registerEmail'];
+                    $userRight = getUserType($userData['loginEmail']);
+                    $_SESSION['type'] = $userRight[0][0];
                     home($res);
                 } else {
                     $err = "L'insertion dans la base de données a échoué.";
@@ -105,7 +107,6 @@ function lost()
 
 function displayAMovie($movieID)
 {
-
     require_once "model/movies.php";
     $movie = getAMovie($movieID);
 
@@ -115,16 +116,103 @@ function displayAMovie($movieID)
 
 function logout()
 {
-
     session_destroy();
+    home();
+}
 
-    header("location:/home");
+function compareTime($theatreTime,$formD ) {
+    $available = true;
+    $formDate = $formD['sessionDate'];
+
+    $formDuration = $formD['sessionDuration'];
+    $endTimeForm = date("H:i", strtotime("+$formDuration minutes", strtotime($formD['sessionStart'])));
+
+    foreach($theatreTime as $tData) {
+        // gets the end of the session
+        $endTimeDB = date("H:i", strtotime("+$tData[2] minutes", strtotime($tData[1])));
+        // only gets the session of form date
+        if($tData[0] == $formDate) {
+            // OK if the form starting time and the form ending time are before the starting of the session
+            if((strtotime($formD['sessionStart']) < $tData[1]) && ($endTimeForm < $tData[1])) {
+                $available = true;
+            // OK if the form starting time is after the ending time of the session
+            } elseif(strtotime($formD['sessionStart']) >= strtotime($endTimeDB)) {
+                $available = true;
+            } else {
+                $available = false;
+                break;
+            }
+        }
+    }
+    return $available;
+}
+
+function addSession($addSessionData) {
+    require_once "model/session_manager.php";
+    require_once "model/movies.php";
+    require_once "view/add_session.php";
+
+    $films = getAllMovies();
+    $theaters = getAllTheaters();
+    $currentDate = date('Y-m-d');
+
+    if (isset($addSessionData['filmSession'])) {
+        $formDate = $addSessionData['sessionDate'];
+        $theatreTime = getTimeOfTheatre((int)$addSessionData['sessionTheatre']);
+
+        if($formDate > $currentDate) {
+            // gets the time information of all the sessions using the same theatre
+            $available = compareTime($theatreTime, $addSessionData);
+
+        } elseif($formDate == $currentDate) {
+            date_default_timezone_set('Europe/Paris');
+            $currentTime = date('H:i');
+
+            if($addSessionData['sessionStart'] > $currentTime) {
+                $available = compareTime($theatreTime, $addSessionData);
+            } else {
+                $error = "L'heure fournie est déjà passée";
+                addSessionView($films, $theaters, $error);
+            }
+
+        } else {
+            $error = "La date fournie est déjà passée";
+            addSessionView($films, $theaters, $error);
+        }
+
+        // verification
+        if (isset($available)) {
+            if ($available == true) {
+                addSessionBD($addSessionData);
+                soon();
+            } else {
+                $error = "La salle est déjà utilisée à cette heure là";
+                addSessionView($films, $theaters, $error);
+            }
+        }
+
+    } else {
+        addSessionView($films, $theaters);
+    }
+}
+
+function soon()
+{
+    require_once "model/session_manager.php";
+    require_once "view/soon.php";
+
+    $sessions = getAllSessions();
+
+    if(isset($_SESSION['email'])) {
+        soonView($sessions, $_SESSION['type']);
+    } else {
+        soonView($sessions);
+    }
     
 }
 
 function addMovie($movieData, $files)
 {
-
     $success = false;
 
     require_once "view/addMovie.php";
