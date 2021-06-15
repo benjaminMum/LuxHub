@@ -16,7 +16,7 @@ C'est un site web de réservation pour "un petit cinéma" avec base de données 
     - pdo_mysql
 - [MySql community server 8+](https://dev.mysql.com/downloads/mysql/)
 - [Node JS](https://nodejs.org/en/)
-- N'importe quelle outils sql qui vous permette de créer et gérer une base de données sql comme [Heidisql](https://www.heidisql.com/download.php)
+- Un outil sql qui vous permette de créer et gérer une base de données sql comme [Heidisql](https://www.heidisql.com/download.php)
 
 ## Comment installer le serveur
 
@@ -27,10 +27,13 @@ C'est un site web de réservation pour "un petit cinéma" avec base de données 
     npm i
     ```
 
-3. dézipper l'archive thumnails.zip dans le dossier [thumbnail](https://github.com/benjaminMum/LuxHub/tree/main/src/view/content/img/thumbnail)
+3. Dézipper l'archive thumnails.zip dans le dossier [thumbnail](https://github.com/benjaminMum/LuxHub/tree/main/src/view/content/img/thumbnail)
 4. Executer les deux scriptes sql du [dossier sql](https://github.com/benjaminMum/LuxHub/tree/main/src/sql), [createDataBase.sql](https://github.com/benjaminMum/LuxHub/blob/main/src/sql/createDataBase.sql) puis [createTestData.sql](https://github.com/benjaminMum/LuxHub/blob/main/src/sql/createTestData.sql)
-5. Lancer un serveur php dans le répertoire src (Une méthode basique qui permet d'héberger un serveur local est d'utiliser le [serveur web intern de php](https://www.php.net/manual/fr/features.commandline.webserver.php))
+5. Ouvrir le fichier [dbConnector.php](https://github.com/benjaminMum/LuxHub/blob/main/src/model/dbConnector.php) et entrer vos credentials dans la fonction openDBConnexion.
+6. Lancer un serveur php dans le répertoire src (Une méthode basique qui permet d'héberger un serveur local est d'utiliser le [serveur web intern de php](https://www.php.net/manual/fr/features.commandline.webserver.php))
 
    ```php
     php -S localhost:8000
     ```
+
+7. Ouvrer votre navigateur et tapez dans la barre de recherche localhost:8000
