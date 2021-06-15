@@ -57,7 +57,7 @@ function registerView($err = null)
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputNewBirthDate">Date de naissance</label><br>
-                                <input type="date" name="registerBirthdate" id="inputNewBirthDate" tabindex="6" required>
+                                <input type="date" name="registerBirthdate" id="inputNewBirthDate" tabindex="6" max="<?=date('Y-m-d')?>" required>
                             </div>
                         </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-function addSessionView($films=null,$theaters=null)
+function addSessionView($films=null,$theaters=null, $error=null)
 {
     $title = "Ajouter une session";
     $currentNav = "add_session";
@@ -10,6 +10,12 @@ function addSessionView($films=null,$theaters=null)
 
     ?>
 
+    <div>
+        <?php if (@isset($error)) { ?>
+            <p class="alert alert-danger"><?= $error ?></p>
+        <?php } ?>
+    </div>
+
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -17,6 +23,8 @@ function addSessionView($films=null,$theaters=null)
             </div>
         </div>
     </section>
+
+
 
     <div class="align-content-center" xmlns:min="http://www.w3.org/1999/xhtml">
         <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
@@ -33,7 +41,7 @@ function addSessionView($films=null,$theaters=null)
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionTheater">Salle</label><br>
-                            <select name="sessionTheater" id="inputSessionTheater" tabindex="4" class="col-8" required>
+                            <select name="sessionTheatre" id="inputSessionTheater" tabindex="4" class="col-8" required>
                                 <?php foreach ($theaters as $availableTheaters) :?>
                                     <option value="<?= $availableTheaters[0] ?>"><?= $availableTheaters[1] ?></option>
                                 <?php endforeach; ?>
@@ -46,12 +54,12 @@ function addSessionView($films=null,$theaters=null)
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionLanguage">Langue</label>
-                            <input type="text" name="sessionLanguage" placeholder="Par ex. FR" id="inputSessionLanguage" tabindex="2" maxlength="2" required>
+                            <input type="text" name="sessionLanguage" placeholder="Par ex. FR" id="inputSessionLanguage" tabindex="2" maxlength="2" pattern="[A-Z]{2}" required>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <label for="inputSessionDate">Date de la séance</label><br>
-                            <input type="date" name="sessionDate" id="inputSessionDate" tabindex="5" class="col-8" required>
+                            <input type="date" name="sessionDate" id="inputSessionDate" tabindex="5" class="col-8" min="<?= date('Y-m-d') ?>" required>
                         </div>
                     </div>
 

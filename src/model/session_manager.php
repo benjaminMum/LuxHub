@@ -41,11 +41,18 @@ function getAllTheaters()
     return executeQuerySelect($sql);
 }
 
+function getTimeOfTheatre($theatreId) {
+    $query = "SELECT `date`, `starting_hour`, `duration` FROM `luxhub`.`sessions` INNER JOIN `Luxhub`.`theaters` ON `sessions`.`Theaters_id` = `theaters`.`id` WHERE `theaters`.`id` = $theatreId";
+    //echo $query;
+
+    return executeQuerySelect($query);
+}
+
 function addSessionBD($addSessionData)
 {
 
     $movie = $addSessionData['filmSession'];
-    $theater = $addSessionData['sessionTheater'];
+    $theater = $addSessionData['sessionTheatre'];
     $sessionCode = sessionCode();
     $language = $addSessionData['sessionLanguage'];
     $date = $addSessionData['sessionDate'];
