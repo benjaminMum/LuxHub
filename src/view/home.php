@@ -15,7 +15,6 @@ function homeView($movies, $res)
     ?>
 
     <main>
-        <?php //print_r($_SESSION)?>
         <?php if(isset($res)) : ?>
         <p class="alert alert-success"><?=$res?></p>
         <?php endif;?>

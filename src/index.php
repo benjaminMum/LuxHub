@@ -15,12 +15,15 @@ require_once "controller/nav.php";
 
 // Routing
 switch (strtok($_SERVER["REQUEST_URI"], '?')) {
-    
+
     default:
         lost();
         break;
-    
+
     case '/':
+        home();
+        break;
+
     case '/home':
         home();
         break;
@@ -44,7 +47,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/addSession':
         addSession($_POST);
         break;
-    
+
     case '/user':
         displayUser();
         break;
@@ -72,9 +75,8 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/writeBooking':
         writeBooking($_POST);
         break;
-    
+
     case (preg_match('/^\/showSession\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
         displayASession($res[1]);
         break;
-        
 }
