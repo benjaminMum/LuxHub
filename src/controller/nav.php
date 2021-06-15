@@ -117,7 +117,7 @@ function displayAMovie($movieID)
 function logout()
 {
     session_destroy();
-    home();
+    header("location:/home");
 }
 
 function compareTime($theatreTime,$formD ) {
