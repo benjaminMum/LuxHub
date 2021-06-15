@@ -8,13 +8,14 @@ function home($res = null)
     homeView($movies, $res);
 }
 
-function modifyUser($code, $modifyData) {
+function modifyUser($code, $modifyData)
+{
     require_once "model/user_manager.php";
 
-    if(isset($_SESSION['email'])) {
-        if(isset($code['id'])) {
-            if($modifyData['modifyPsw'] == $modifyData['modifyConfirmPsw'])  {
-                if(modifyUserDB($code['id'], $modifyData)) {
+    if (isset($_SESSION['email'])) {
+        if (isset($code['id'])) {
+            if ($modifyData['modifyPsw'] == $modifyData['modifyConfirmPsw']) {
+                if (modifyUserDB($code['id'], $modifyData)) {
                     $res = "Vos informations ont bien été modifiées.";
                     home($res);
                 }
@@ -24,7 +25,6 @@ function modifyUser($code, $modifyData) {
                 require_once "view/modify-user.php";
                 modifyUserView($err, $userData);
             }
-
         } else {
             $userData = getUserData($_SESSION['email']);
             require_once "view/modify-user.php";
@@ -35,16 +35,16 @@ function modifyUser($code, $modifyData) {
     }
 }
 
-function displayUser() {
+function displayUser()
+{
     require_once "model/user_manager.php";
-    if(isset($_SESSION['email'])) {
+    if (isset($_SESSION['email'])) {
         $userData = getUserData($_SESSION['email']);
         require_once "view/user.php";
         userView($userData);
     } else {
         home();
     }
-
 }
 
 function login($userData)
@@ -120,23 +120,24 @@ function logout()
     header("location:/home");
 }
 
-function compareTime($theatreTime,$formD ) {
+function compareTime($theatreTime, $formD)
+{
     $available = true;
     $formDate = $formD['sessionDate'];
 
     $formDuration = $formD['sessionDuration'];
     $endTimeForm = date("H:i", strtotime("+$formDuration minutes", strtotime($formD['sessionStart'])));
 
-    foreach($theatreTime as $tData) {
+    foreach ($theatreTime as $tData) {
         // gets the end of the session
         $endTimeDB = date("H:i", strtotime("+$tData[2] minutes", strtotime($tData[1])));
         // only gets the session of form date
-        if($tData[0] == $formDate) {
+        if ($tData[0] == $formDate) {
             // OK if the form starting time and the form ending time are before the starting of the session
-            if((strtotime($formD['sessionStart']) < $tData[1]) && ($endTimeForm < $tData[1])) {
+            if ((strtotime($formD['sessionStart']) < $tData[1]) && ($endTimeForm < $tData[1])) {
                 $available = true;
-            // OK if the form starting time is after the ending time of the session
-            } elseif(strtotime($formD['sessionStart']) >= strtotime($endTimeDB)) {
+                // OK if the form starting time is after the ending time of the session
+            } elseif (strtotime($formD['sessionStart']) >= strtotime($endTimeDB)) {
                 $available = true;
             } else {
                 $available = false;
@@ -147,7 +148,8 @@ function compareTime($theatreTime,$formD ) {
     return $available;
 }
 
-function addSession($addSessionData) {
+function addSession($addSessionData)
+{
     require_once "model/session_manager.php";
     require_once "model/movies.php";
     require_once "view/add_session.php";
@@ -160,21 +162,19 @@ function addSession($addSessionData) {
         $formDate = $addSessionData['sessionDate'];
         $theatreTime = getTimeOfTheatre((int)$addSessionData['sessionTheatre']);
 
-        if($formDate > $currentDate) {
+        if ($formDate > $currentDate) {
             // gets the time information of all the sessions using the same theatre
             $available = compareTime($theatreTime, $addSessionData);
-
-        } elseif($formDate == $currentDate) {
+        } elseif ($formDate == $currentDate) {
             date_default_timezone_set('Europe/Paris');
             $currentTime = date('H:i');
 
-            if($addSessionData['sessionStart'] > $currentTime) {
+            if ($addSessionData['sessionStart'] > $currentTime) {
                 $available = compareTime($theatreTime, $addSessionData);
             } else {
                 $error = "L'heure fournie est déjà passée";
                 addSessionView($films, $theaters, $error);
             }
-
         } else {
             $error = "La date fournie est déjà passée";
             addSessionView($films, $theaters, $error);
@@ -190,25 +190,25 @@ function addSession($addSessionData) {
                 addSessionView($films, $theaters, $error);
             }
         }
-
     } else {
         addSessionView($films, $theaters);
     }
 }
 
-function soon()
+function soon($movieCode = null)
 {
     require_once "model/session_manager.php";
     require_once "view/soon.php";
-
-    $sessions = getAllSessions();
-
-    if(isset($_SESSION['email'])) {
+    if ($movieCode) {
+        $sessions = getSessionsFromMovie($movieCode);
+    } else {
+        $sessions = getAllSessions();
+    }
+    if (isset($_SESSION['email'])) {
         soonView($sessions, $_SESSION['type']);
     } else {
         soonView($sessions);
     }
-    
 }
 
 function addMovie($movieData, $files)
@@ -267,7 +267,8 @@ function addMovie($movieData, $files)
     }
 }
 
-function myBookings(){
+function myBookings()
+{
 
     require_once "model/bookings.php";
 
@@ -276,10 +277,10 @@ function myBookings(){
     require_once "view/reservation.php";
 
     reservationView($bookings);
-
 }
 
-function createBooking($sessionCode){
+function createBooking($sessionCode)
+{
 
     require_once "model/bookings.php";
 
@@ -290,10 +291,10 @@ function createBooking($sessionCode){
     require_once "view/makeAReservation.php";
 
     showBooking($rowLine, $data);
-
 }
 
-function writeBooking($reservationData){
+function writeBooking($reservationData)
+{
 
     require_once "model/bookings.php";
 
@@ -313,17 +314,16 @@ function writeBooking($reservationData){
 
     writeReservation($people['id'], $sessionId[0]['id'], $reservationID);
 
-    foreach ($seats as $seat){
+    foreach ($seats as $seat) {
 
         writeReservation($people['id'], $sessionId[0]['id'], $reservationID, $seat, false);
-
     }
 
     myBookings();
-
 }
 
-function displayASession($sessionCode){
+function displayASession($sessionCode)
+{
 
     require_once "view/session.php";
 
@@ -332,7 +332,4 @@ function displayASession($sessionCode){
     $data = getAllSessionData($sessionCode);
 
     showASession($data);
-
-
-
 }

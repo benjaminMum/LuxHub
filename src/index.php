@@ -76,7 +76,11 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         writeBooking($_POST);
         break;
 
-    case (preg_match('/^\/showSession\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+    case (preg_match('/^\/session\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
         displayASession($res[1]);
+        break;
+    
+    case (preg_match('/^\/soon\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        soon($res[1]);
         break;
 }

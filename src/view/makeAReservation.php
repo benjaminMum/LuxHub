@@ -44,14 +44,10 @@ function showBooking($seats, $data)
             </div>
         </section>
 
-        <!-- <pre>
-        <?= print_r($data); ?>
-        </pre> -->
-
         <div class="align-content-center">
             <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
                 <div class="col-lg-6 d-flex justify-content-center border pt-3 pb-3 align-content-center">
-                    <form action="/writeBooking" method="post">
+                    <form action="/writeBooking" method="post" id="bookingForm">
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="bookingFilm">Film</label>
@@ -149,6 +145,7 @@ function showBooking($seats, $data)
     ?>
 
     <script type="module" src="/view/js/bookingSeats.js"></script>
+    <script type="module" src="/view/js/seatsChecker.js"></script>
 
 <?php
     $scripts = ob_get_clean();
