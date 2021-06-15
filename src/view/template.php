@@ -39,7 +39,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
 
     </head>
 
-    <body>
+    <body style="min-height: 100vh; display:flex; flex-direction:column; justify-content:space-between">
 
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -79,7 +79,13 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
             <?= $content ?? "<h1>bad dev forgot to add content</h1>" ?>
 
         </main>
-        <footer>
+        <footer class="footer mt-3 py-3 bg-dark text-center">
+
+            <div class="d-flex justify-content-center">
+                <div class="text-muted mx-2">
+                    <p>FoMuCo | 2021</p>
+                </div>
+            </div>
 
             <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
             <?= $scripts ?? "" ?>
