@@ -30,20 +30,6 @@ function addMovieView($err = null)
                                 <input type="texte" name="movieID" id="inputMovieID" required>
                             </div>
                             <div class="col-lg-6 col-sm-6">
-                                <label for="inputMovieTitle">Titre</label><br>
-                                <input type="text" name="movieTitle" id="inputMovieTitle" required>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <label for="inputReleaseDate">Date de sortie</label>
-                                <input type="date" name="movieReleaseDate" id="inputReleaseDate" required>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
                                 <label for="inputMovieDuration">Durée(minutes)</label><br>
                                 <input type="number" name="movieDuration" id="inputMovieDuration" required min="0" oninput="validity.valid||(value='');">
                             </div>
@@ -53,14 +39,27 @@ function addMovieView($err = null)
 
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
-                                <label for="inputMovieDescription">Description</label><br>
-                                <input type="text" name="movieDescription" id="inputMovieDescription" required accept="image/png, image/jpeg">
+                                <label for="inputMovieTitle">Titre</label><br>
+                                <input type="text" name="movieTitle" id="inputMovieTitle" required>
                             </div>
+
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputMovieLegalAge">Âge légal</label><br>
                                 <input type="number" name="movieLegalAge" id="inputMovieLegalAge" required min="0" oninput="validity.valid||(value='');">
                             </div>
+                        </div>
 
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <label for="inputMovieDescription">Description</label><br>
+                                <textarea name="movieDescription" id="inputMovieDescription" rows="5" cols="23" required></textarea>
+                                </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <label for="inputReleaseDate">Date de sortie</label>
+                                <input type="date" name="movieReleaseDate" id="inputReleaseDate" required>
+                            </div>
                         </div>
 
                         <br>
@@ -83,7 +82,7 @@ function addMovieView($err = null)
                                 <input type="reset" value="Effacer">
                             </div>
                             <div class="col-lg-6 col-sm-6">
-                                <input type="submit" value="Créer">
+                                <input type="submit" value="Ajouter">
                             </div>
                         </div>
 

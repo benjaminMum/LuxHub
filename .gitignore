@@ -5,6 +5,8 @@ doc/Timesheet.html
 doc/Testsheet.html
 .idea
 src/.idea
+src/view/content/img
 .markdownlint.json
 src/view/content/img/thumbnail/*.jpg
 src/view/content/img/original/*.jpg
+

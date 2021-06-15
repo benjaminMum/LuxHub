@@ -49,8 +49,8 @@ function saveImage($image, $movieID)
 
         // Save to jpeg to save space
         $imageName = "$movieID.jpg";
-        imagejpeg($thumbnail, "view/content/img/thumbnail/" . $imageName, 100);
-        imagejpeg($img, "view/content/img/original/" . $imageName, 100);
+        imagejpeg($thumbnail, "/view/content/img/thumbnail/" . $imageName, 100);
+        imagejpeg($img, "/view/content/img/original/" . $imageName, 100);
 
         // Destroys the variables to save ram usage
         imagedestroy($img);

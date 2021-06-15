@@ -60,4 +60,21 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/addMovie':
         addMovie(@$_POST, @$_FILES);
         break;
+
+    case '/myBookings':
+        myBookings();
+        break;
+
+    case (preg_match('/^\/createBooking\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        createBooking($res[1]);
+        break;
+
+    case '/writeBooking':
+        writeBooking($_POST);
+        break;
+    
+    case (preg_match('/^\/showSession\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        displayASession($res[1]);
+        break;
+        
 }
