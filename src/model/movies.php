@@ -45,5 +45,6 @@ function isMovieAlreadyExist($movieID)
     $sql = "SELECT * FROM movies WHERE movie_code LIKE '$movieID'";
 
     $res = executeQuerySelect($sql);
+    
     return $res;
 }

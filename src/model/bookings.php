@@ -3,7 +3,7 @@
 function getSpecificBookings($email)
 {
 
-    $sql = "SELECT * FROM reservations INNER JOIN people ON reservations.People_id=people.id INNER JOIN sessions ON reservations.Sessions_id=sessions.id INNER JOIN movies ON sessions.Movies_id=movies.id INNER JOIN theaters ON sessions.Theaters_id=theaters.id INNER JOIN seats ON seats.Reservations_id=reservations.id WHERE people.email = \"$email\"";
+    $sql = "SELECT * FROM reservations INNER JOIN people ON reservations.People_id=people.id INNER JOIN sessions ON reservations.Sessions_id=sessions.id INNER JOIN movies ON sessions.Movies_id=movies.id INNER JOIN theaters ON sessions.Theaters_id=theaters.id INNER JOIN seats ON seats.Reservations_id=reservations.id WHERE CONCAT(date, \" \",starting_hour) > NOW() AND people.email = \"$email\" ORDER BY sessions.date, sessions.starting_hour asc";
 
     //echo $sql;
 
@@ -98,7 +98,8 @@ function getSessionId($sessionCode)
     return $res;
 }
 
-function getAllSessionData($sessionCode){
+function getAllSessionData($sessionCode)
+{
 
     $sql = "SELECT * FROM sessions INNER JOIN movies ON sessions.Movies_id = movies.id INNER JOIN theaters ON sessions.Theaters_id = theaters.id WHERE sessions.session_code = $sessionCode";
 
@@ -109,5 +110,4 @@ function getAllSessionData($sessionCode){
     $res = executeQuerySelect($sql);
 
     return $res;
-
 }

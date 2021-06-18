@@ -35,7 +35,7 @@ function showAMovieView($movieData, $movieid)
                     </div>
                     <strong><small>Description:</small></strong>
                     <p><?= $movieData[0]['description'] ?></p>
-                    <a href="/soon" class="btn btn-secondary">Réserver</a>
+                    <a href="/soon/<?=$movieData[0]['movie_code']?>" class="btn btn-secondary">Réserver</a>
                 </div>
             </div>
         </div>

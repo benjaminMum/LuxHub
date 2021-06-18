@@ -9,10 +9,6 @@
 
 require_once "model/dbConnector.php";
 
-/**
- * @return array The new code for the user
- * @Description Generates a new code for an user based on the last generated code
- */
 function getAllSessions()
 {
     $sql = "SELECT * FROM luxhub.sessions INNER JOIN luxhub.movies on luxhub.sessions.Movies_id=luxhub.movies.id 
@@ -41,7 +37,8 @@ function getAllTheaters()
     return executeQuerySelect($sql);
 }
 
-function getTimeOfTheatre($theatreId) {
+function getTimeOfTheatre($theatreId)
+{
     $query = "SELECT `date`, `starting_hour`, `duration` FROM `luxhub`.`sessions` INNER JOIN `Luxhub`.`theaters` ON `sessions`.`Theaters_id` = `theaters`.`id` WHERE `theaters`.`id` = $theatreId";
     //echo $query;
 
@@ -62,4 +59,14 @@ function addSessionBD($addSessionData)
     $query = "INSERT INTO `luxhub`.`sessions` (`Movies_id`, `Theaters_id`, `session_code`, `language`,`date`, `starting_hour`, `duration`) VALUES ($movie, $theater, $sessionCode, '$language','$date', '$hour', $duration);";
 
     return executeQueryIUD($query);
+}
+
+function getSessionsFromMovie($movieId)
+{
+
+    $sql = "SELECT * FROM luxhub.sessions INNER JOIN luxhub.movies on luxhub.sessions.Movies_id=luxhub.movies.id WHERE CONCAT(date, \" \",starting_hour) > NOW() AND movie_code = $movieId ORDER BY sessions.date, sessions.starting_hour asc";
+
+    $res = executeQuerySelect($sql);
+
+    return $res;
 }

@@ -31,29 +31,29 @@ function homeView($movies, $res)
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <?php $i = 0 ?> 
-                    <?php while($i < 9){?>
+                    <?php foreach ($movies as $movie){?>
                         <div class="col">
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-5">
-                                        <img src="<?= $movies[$i]['thumbnails'] ?>" alt="<?= $movies[$i]['title'] ?>">
+                                        <img src="<?= $movie['thumbnails'] ?>" alt="<?= $movie['title'] ?>">
                                     </div>
                                     <div class="col-md-7">
                                         <div class="card-body">
-                                            <h5 class="card-title"><?= $movies[$i]['title'] ?></h5>
+                                            <h5 class="card-title"><?= $movie['title'] ?></h5>
                                             <div class="scrollBox">
-                                                <p class="card-text"><?= $movies[$i]['description'] ?></p>
+                                                <p class="card-text"><?= $movie['description'] ?></p>
                                             </div>
                                             <div class="d-flex justify-content-between">
-                                                <p class="card-text"><small class="text-muted"><?= $movies[$i]['duration'] ?> mins</small></p>
-                                                <a href="/movie/<?=$movies[$i][0]?>" class="btn btn-primary">Info</a>
+                                                <p class="card-text"><small class="text-muted"><?= $movie['duration'] ?> mins</small></p>
+                                                <a href="/movie/<?=$movie[0]?>" class="btn btn-primary">Info</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php $i++; } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
