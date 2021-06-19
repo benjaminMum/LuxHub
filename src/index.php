@@ -56,6 +56,10 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         modifyUser($_GET, $_POST);
         break;
 
+    case '/showUsers':
+        showUsers($_GET['userSearch']);
+        break;
+
     case '/logout':
         logout();
         break;

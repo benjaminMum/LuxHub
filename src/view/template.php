@@ -68,6 +68,9 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                             <?php } else { ?>
                                 <a href="/user" class="btn btn-secondary me-2">Votre compte</a>
                                 <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a>
+                                <?php if($_SESSION['type'] == 4) {?>
+                                    <a href="/showUsers" class="btn btn-secondary me-2">Utilisateurs</a>
+                                <?php }?>
                                 <a href="/logout" class="btn btn-secondary me-2">Se déconnecter</a>
                             <?php } ?>
                         </div>

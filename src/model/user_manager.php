@@ -124,3 +124,18 @@ function getUserType($userEmail) {
     $query = "SELECT `Account_type_id` FROM `luxhub`.`people` WHERE  `email` = '$userEmail'";
     return executeQuerySelect($query);
 }
+
+function getUsers($search=null) {
+    if(isset($search)) {
+        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` =  `Account_type`.`id` WHERE `firstname` LIKE '%" .$search ."%' OR `lastname` LIKE '%" .$search ."%' OR `lastname` LIKE '%" .$search ."%'";
+    } else {
+        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` =  `Account_type`.`id`";
+    }
+
+    return executeQuerySelect($query);
+}
+
+function getAllTypes() {
+    $query = "SELECT * FROM `Luxhub`.`Account_type`";
+    return executeQuerySelect($query);
+}
