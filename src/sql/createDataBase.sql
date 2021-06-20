@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `LuxHub`.`Reservations` (
   CONSTRAINT `fk_Reservations_People1`
     FOREIGN KEY (`People_id`)
     REFERENCES `LuxHub`.`People` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Reservations_Sessions1`
     FOREIGN KEY (`Sessions_id`)
