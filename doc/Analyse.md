@@ -154,5 +154,6 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 ### Problèmes restant
 
 * L'upload d'image ne fonctionne pas. L'image n'est pas sauvegardée.
+* Aucune gestion de prix donc aucun rabais, payement, etc...
 
 ### Suites possibles
