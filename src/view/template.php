@@ -57,9 +57,11 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                             <li>
                                 <a class="nav-link <?= (@$currentNav == "soon") ? "active" : "" ?>" aria-current="page" href="/soon">Prochainement</a>
                             </li>
+                            <?php if (!empty($_SESSION)){ ?>
                             <li>
                                 <a class="nav-link <?= (@$currentNav == "myBookings") ? "active" : "" ?>" aria-current="page" href="/myBookings">Mes réservations</a>
                             </li>
+                            <?php } ?>
                         </ul>
                         <div class="col-12 col-md-8 d-flex justify-content-md-end mt-2 mt-md-0 gx-0">
                             <?php if (empty($_SESSION)) { ?>
