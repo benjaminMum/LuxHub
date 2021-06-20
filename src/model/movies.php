@@ -17,7 +17,7 @@ function getAllMovies()
 
 function getAMovie($movieID)
 {
-    $sql = "SELECT * FROM movies WHERE movie_code = $movieID";
+    $sql = "SELECT * FROM movies WHERE id = $movieID";
     $res = executeQuerySelect($sql);
     return $res;
 }
@@ -30,10 +30,12 @@ function writeAMovie($movieData)
     $duration = $movieData['movieDuration'];
     $description = $movieData['movieDescription'];
     $legalAge = $movieData['movieLegalAge'];
-    $thumbnail = "view/content/img/thumbnail/" . $movieData['movieID'] . ".jpg";
+    $thumbnail = "/view/content/img/thumbnail/" . $movieData['movieID'] . ".jpg";
+    $regex = "/.*=(.*)/";
     $trailer = $movieData['movieTrailer'];
+    preg_match($regex, $trailer, $res);
 
-    $sql = "INSERT INTO movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers)  VALUES ('$id', '$title', '$releaseDate', $duration, '$description', $legalAge, '$thumbnail', '$trailer')";
+    $sql = "INSERT INTO movies (movie_code, title, release_date, duration, description, legal_age, thumbnails, trailers)  VALUES ('$id', '$title', '$releaseDate', $duration, '$description', $legalAge, '$thumbnail', '$res[1]')";
 
     $res = executeQueryIUD($sql);
 

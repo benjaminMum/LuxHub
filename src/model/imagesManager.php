@@ -29,28 +29,13 @@ function saveImage($image, $movieID)
                 break;
         }
 
-        // Determine whether the image is in landscape or portrait aspect ratio
-        $imageWidth = imagesx($img);
-        $imageHeight = imagesy($img);
-
-        if ($imageWidth > $imageHeight) {
-            //Landscape
-            $cropHeight = $imageHeight;
-            $cropWidth = $cropHeight;
-        } else {
-            //Portrait
-            $cropWidth = $imageWidth;
-            $cropHeight = $cropWidth;
-        }
-
-        // Crop for thumbnail
-        $thumbnail = imagecrop($img, ["x" => ($imageWidth - $cropWidth) / 2, "y" => ($imageHeight - $cropHeight) / 2, "width" => $cropWidth, "height" => $cropHeight]);
-        $thumbnail = imagescale($thumbnail, 182, 268);
+        // scale for thumbnail
+        $thumbnail = imagescale($img, 182, 268);
 
         // Save to jpeg to save space
         $imageName = "$movieID.jpg";
-        imagejpeg($thumbnail, "/view/content/img/thumbnail/" . $imageName, 100);
-        imagejpeg($img, "/view/content/img/original/" . $imageName, 100);
+        imagejpeg($thumbnail, $_SERVER['DOCUMENT_ROOT'] . "/view/content/img/thumbnail/" . $imageName, 100);
+        imagejpeg($img, $_SERVER['DOCUMENT_ROOT'] . "/view/content/img/original/" . $imageName, 100);
 
         // Destroys the variables to save ram usage
         imagedestroy($img);
