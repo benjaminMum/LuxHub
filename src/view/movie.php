@@ -23,7 +23,7 @@ function showAMovieView($movieData, $movieid)
                     <img src="<?= $movieData[0]['thumbnails'] ?>" alt="<?= $movieData[0]['title'] ?>">
                     <br>
                     <strong><small>Durée:</small></strong>
-                    <p><?= $movieData[0]['duration'] ?></p>
+                    <p><?= $movieData[0]['duration'] ?> mins</p>
                     <strong> <small>Date de sortie:</small></strong>
                     <p><?= $movieData[0]['release_date'] ?></p>
                     <strong><small>Âge légal:</small></strong>

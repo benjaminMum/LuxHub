@@ -21,7 +21,7 @@ function showASession($sessionData)
                     <img src="<?= $sessionData[0]['thumbnails'] ?>" alt="<?= $sessionData[0]['title'] ?>">
                     <br>
                     <strong><small>Durée:</small></strong>
-                    <p><?= $sessionData[0]['duration'] ?></p>
+                    <p><?= $sessionData[0]['duration'] ?> mins</p>
                     <strong> <small>Langue:</small></strong>
                     <p><?= $sessionData[0]['language'] ?></p>
                     <strong><small>Date:</small></strong>
