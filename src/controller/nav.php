@@ -369,3 +369,13 @@ function displayASession($sessionCode)
 
     showASession($data);
 }
+
+function deleteASession($sessionCode)
+{
+
+    require_once "model/bookings.php";
+
+    deleteSession($sessionCode);
+
+    header("Location:/soon");
+}

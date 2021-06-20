@@ -91,4 +91,8 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case (preg_match('/^\/soon\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
         soon($res[1]);
         break;
+        
+    case (preg_match('/^\/deleteSession\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        deleteASession($res[1]);
+        break;
 }

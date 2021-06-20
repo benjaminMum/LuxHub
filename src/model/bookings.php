@@ -111,3 +111,15 @@ function getAllSessionData($sessionCode)
 
     return $res;
 }
+
+function deleteSession($sessionCode){
+
+    $sql = "DELETE FROM sessions WHERE session_code LIKE \"$sessionCode\"";
+
+    require_once "model/dbConnector.php";
+
+    $res = executeQuerySelect($sql);
+
+    return $res;
+
+}
