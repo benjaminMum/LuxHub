@@ -126,12 +126,10 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 
 ## Journal de bord
 
-![journa de bord de l'équipe FOMUCO](./Journal/journal_de_bord/JDB.png)
-
-* 10.05.2021 15:35:00 : Sprint review de l'équipe FoMuCo et le project owner Monsieur Carrel
+* 10.05.2021 15:35:00 : Sprint review de l'équipe FoMuCo avec le project owner Monsieur Carrel
 * 17.05.2021 14:53:00 : Validation du MCD et du MLD par Monsieur Mottier
 * 31.05.2021 16:50:00 : Validation de la modification du MLD (suppression de la table images) par Monsieur Mottier
-* 08.06.2021 10:35:00 : Sprint review de l'éqioèe FoMuCo et le project owner Monsieur Carrel
+* 08.06.2021 10:35:00 : Sprint review de l'éqioèe FoMuCo avec le project owner Monsieur Carrel
 
 ## Bilan des objectifs
 
@@ -145,11 +143,12 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 
 ### Négatif
 
+* La géstion du temps n'as pas été très bien gérée
+* Les points fixés au début du projet ont été un peu trop gros
+
 ### Difficultés
 
+* Le temps que nous avions était assez court par rapport a d'autre projets
+* La conception du MCD puis du MLD n'a pas été très intelligente comme nous avons pu le constatez au cours du projet
+
 ### Suites possibles
-
-### Requirements
-
-* php 8+
-  * extenstion : curl, fileinfo, gd, mbstring, pdo_mysql
