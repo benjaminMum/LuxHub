@@ -95,4 +95,8 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case (preg_match('/^\/deleteSession\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
         deleteASession($res[1]);
         break;
+        
+    case '/contact':
+        contactUs(@$_POST);
+        break;
 }

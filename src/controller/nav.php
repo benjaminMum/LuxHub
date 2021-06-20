@@ -379,3 +379,25 @@ function deleteASession($sessionCode)
 
     header("Location:/soon");
 }
+
+function contactUs($message){
+
+    if($message){
+
+        require_once "controller/mail.php";
+
+        sendMail($message['mailMessage']);
+
+        $res = "Votre email a bien été enovyé.";
+
+        home($res);
+
+    }else{
+
+        require_once "view/contact.php";
+
+        contactView();
+
+    }
+
+}

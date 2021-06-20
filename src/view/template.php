@@ -91,7 +91,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
 
             <div class="d-flex justify-content-center">
                 <div class="text-muted mx-2">
-                    <p>FoMuCo | 2021</p>
+                    <p><a href="/contact" class="text-muted text-decoration-none" style="color: white !important;">Contactez-nous</a> | FoMuCo | 2021</p>
                 </div>
             </div>
 
