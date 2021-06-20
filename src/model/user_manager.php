@@ -127,9 +127,9 @@ function getUserType($userEmail) {
 
 function getUsers($search=null) {
     if(isset($search)) {
-        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` =  `Account_type`.`id` WHERE `firstname` LIKE '%" .$search ."%' OR `lastname` LIKE '%" .$search ."%' OR `lastname` LIKE '%" .$search ."%'";
+        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` = `Account_type`.`id` WHERE `firstname` LIKE '%" .$search ."%' OR `lastname` LIKE '%" .$search ."%' OR `email` LIKE '%" .$search ."%'  ORDER BY `lastname`";
     } else {
-        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` =  `Account_type`.`id`";
+        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` = `Account_type`.`id` ORDER BY `lastname`";
     }
 
     return executeQuerySelect($query);
@@ -138,4 +138,9 @@ function getUsers($search=null) {
 function getAllTypes() {
     $query = "SELECT * FROM `Luxhub`.`Account_type`";
     return executeQuerySelect($query);
+}
+
+function modifyUserTypeBD($user, $newType) {
+    $query = "UPDATE `people` SET `Account_type_id` = $newType WHERE `client_code` = $user";
+    return executeQueryIUD($query);
 }

@@ -65,6 +65,17 @@ function showUsers($search=null) {
     }
 }
 
+function modifyUserType($user, $newType) {
+    require_once "model/user_manager.php";
+    if(modifyUserTypeBD($user, $newType)) {
+        showUsers();
+    } else {
+        $err = "Une erreur est survenue.";
+        showUsers();
+    }
+
+}
+
 function login($userData)
 {
     require_once "model/user_manager.php";
