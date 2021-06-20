@@ -401,3 +401,13 @@ function contactUs($message){
     }
 
 }
+
+function deleteUser($userId){
+
+    require_once "model/user_manager.php";
+
+    deleteAnUser($userId);
+
+    header("Location:/showUsers");
+
+}

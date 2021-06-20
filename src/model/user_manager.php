@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author : Benjamin Muminovic
  * @description : Contains all the functions to manage users in the database
@@ -11,7 +12,8 @@ require_once "model/dbConnector.php";
  * @return string The new code for the user
  * @Description Generates a new code for an user based on the last generated code
  */
-function generateId() {
+function generateId()
+{
     $query = "SELECT * FROM `luxhub`.`people`;";
     $result = executeQuerySelect($query);
 
@@ -28,7 +30,8 @@ function generateId() {
  * @description Registers an user in the database with the information given
  * @return bool True if the execution worked, false otherwise
  */
-function registerUser($registerData) {
+function registerUser($registerData)
+{
     // By default the account type should be a member
     $accountType = 1;
     // Generates a new code for the user
@@ -51,7 +54,8 @@ function registerUser($registerData) {
  * @param $userMail string mail of the user
  * @return array all the data of the user
  */
-function getUserData($userMail) {
+function getUserData($userMail)
+{
     $query = "SELECT * FROM `people` WHERE `email` = '$userMail';";
     $userData = executeQuerySelect($query);
 
@@ -64,7 +68,8 @@ function getUserData($userMail) {
  * @param $modifyData array the new data to replace in db
  * @return bool|null the success message
  */
-function modifyUserDB($userId, $modifyData) {
+function modifyUserDB($userId, $modifyData)
+{
 
     $password = password_hash($modifyData["modifyPsw"], PASSWORD_DEFAULT);
 
@@ -83,7 +88,8 @@ function modifyUserDB($userId, $modifyData) {
  * @param $userEmail string the email to verify the existence of
  * @return bool Returns true if the user already exists, false otherwise.
  */
-function verifyUser($userEmail) {
+function verifyUser($userEmail)
+{
     $query = "SELECT `email` FROM `people` WHERE `email` = '$userEmail';";
     $result = executeQuerySelect($query);
 
@@ -100,14 +106,15 @@ function verifyUser($userEmail) {
  * @param $loginData array Contains the data of the login form
  * @return bool True if the login is successful, false otherwise
  */
-function loginUser($loginData) {
+function loginUser($loginData)
+{
     $userMail = $loginData['loginEmail'];
     $query = "SELECT `password` FROM `people` WHERE `email` = '$userMail';";
     $result = executeQuerySelect($query);
-    if($result != NULL) {
+    if ($result != NULL) {
         $pswVerif = password_verify($loginData['loginPsw'], $result[0][0]);
 
-        if($pswVerif) {
+        if ($pswVerif) {
             $success = true;
         } else {
             $success = false;
@@ -117,17 +124,18 @@ function loginUser($loginData) {
     }
 
     return $success;
-
 }
 
-function getUserType($userEmail) {
+function getUserType($userEmail)
+{
     $query = "SELECT `Account_type_id` FROM `luxhub`.`people` WHERE  `email` = '$userEmail'";
     return executeQuerySelect($query);
 }
 
-function getUsers($search=null) {
-    if(isset($search)) {
-        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` = `Account_type`.`id` WHERE `firstname` LIKE '%" .$search ."%' OR `lastname` LIKE '%" .$search ."%' OR `email` LIKE '%" .$search ."%'  ORDER BY `lastname`";
+function getUsers($search = null)
+{
+    if (isset($search)) {
+        $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` = `Account_type`.`id` WHERE `firstname` LIKE '%" . $search . "%' OR `lastname` LIKE '%" . $search . "%' OR `email` LIKE '%" . $search . "%'  ORDER BY `lastname`";
     } else {
         $query = "SELECT * FROM `people` INNER JOIN `Account_type` ON `people`.`Account_type_id` = `Account_type`.`id` ORDER BY `lastname`";
     }
@@ -135,12 +143,20 @@ function getUsers($search=null) {
     return executeQuerySelect($query);
 }
 
-function getAllTypes() {
+function getAllTypes()
+{
     $query = "SELECT * FROM `Luxhub`.`Account_type`";
     return executeQuerySelect($query);
 }
 
-function modifyUserTypeBD($user, $newType) {
+function modifyUserTypeBD($user, $newType)
+{
     $query = "UPDATE `people` SET `Account_type_id` = $newType WHERE `client_code` = $user";
     return executeQueryIUD($query);
+}
+
+function deleteAnUser($userId)
+{
+    $sql = "DELETE FROM people WHERE client_code = $userId";
+    return executeQueryIUD($sql);
 }

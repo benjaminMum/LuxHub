@@ -8,7 +8,7 @@ function getUsersView($usersData, $types)
     // Content
     ob_start();
 
-    ?>
+?>
 
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
@@ -65,6 +65,13 @@ function getUsersView($usersData, $types)
                                         </div>
                                     </td>
                                 </form>
+                                <form method="POST" action="/deleteUser/<?= $user[2] ?>">
+                                    <td>
+                                        <div class="col-2">
+                                            <input id="btnSubmit" type="submit" class="btn-danger" value="supprimer">
+                                        </div>
+                                    </td>
+                                </form>
                             </tr>
                         <?php } ?>
 
@@ -77,7 +84,7 @@ function getUsersView($usersData, $types)
         </div>
     </div>
 
-    <?php
+<?php
 
     $content = ob_get_clean();
 

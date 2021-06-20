@@ -99,4 +99,8 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
     case '/contact':
         contactUs(@$_POST);
         break;
+
+    case (preg_match('/^\/deleteUser\/(\d+)\/?$/', $_SERVER["REQUEST_URI"], $res) ? true : false):
+        deleteUser($res[1]);
+        break;
 }
