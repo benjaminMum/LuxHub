@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `LuxHub`.`Reservations` (
   CONSTRAINT `fk_Reservations_Sessions1`
     FOREIGN KEY (`Sessions_id`)
     REFERENCES `LuxHub`.`Sessions` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `LuxHub`.`Seats` (
   CONSTRAINT `fk_Seats_Reservations1`
     FOREIGN KEY (`Reservations_id`)
     REFERENCES `LuxHub`.`Reservations` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
