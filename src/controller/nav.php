@@ -47,33 +47,34 @@ function displayUser()
     }
 }
 
-function showUsers($search=null) {
+function showUsers($search = null)
+{
     require_once "model/user_manager.php";
     require_once "view/manage-users.php";
 
     $types = getAllTypes();
 
-    if(isset($search)) {
+    if (isset($search)) {
         $getUserData = getUsers($search);
     } else {
         $getUserData = getUsers();
     }
-    if(isset($_SESSION) && $_SESSION['type'] == 4) {
+    if (isset($_SESSION) && $_SESSION['type'] == 4) {
         getUsersView($getUserData, $types);
     } else {
         home();
     }
 }
 
-function modifyUserType($user, $newType) {
+function modifyUserType($user, $newType)
+{
     require_once "model/user_manager.php";
-    if(modifyUserTypeBD($user, $newType)) {
+    if (modifyUserTypeBD($user, $newType)) {
         showUsers();
     } else {
         $err = "Une erreur est survenue.";
         showUsers();
     }
-
 }
 
 function login($userData)
@@ -347,6 +348,12 @@ function writeBooking($reservationData)
 
         writeReservation($people['id'], $sessionId[0]['id'], $reservationID, $seat, false);
     }
+
+    require_once "controller/mail.php";
+
+    $subject = "Confirmation de réservation.";
+    $message = "Bonjour, votre réservation a bien été éffectuée.";
+    sendConfirmationMail($_SESSION['email'], $subject, $message);
 
     myBookings();
 }

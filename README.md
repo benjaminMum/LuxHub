@@ -14,6 +14,8 @@ C'est un site web de réservation pour "un petit cinéma" avec base de données 
     - gd(ou gd2. Si vous rencontrez des problèmes avec gd2 essayer d'utiliser gd)
     - mbstring
     - pdo_mysql
+  - SMTP
+    - Pour envoyer des mail, la fonction mail() de php est utilisée donc il faut configurer php.ini avec un serveur de mail
 - [MySql community server 8+](https://dev.mysql.com/downloads/mysql/)
 - [Node JS](https://nodejs.org/en/)
 - Un outil sql qui vous permette de créer et gérer une base de données sql comme [Heidisql](https://www.heidisql.com/download.php)
