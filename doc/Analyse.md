@@ -166,6 +166,7 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 * Aucune gestion de prix donc aucun rabais, payement, etc...
 * Nous ne pouvons pas gérer les salles
 * Nous ne pouvons pas voir les dates disponibles depuis un film mais nous somme redirigé sur une page tiers.
+* N'affiche pas les données sur une session crée par un admin car le code de session n'est pas ajouté correctement
 
 ### Suites possibles
 
