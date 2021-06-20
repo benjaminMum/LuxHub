@@ -54,5 +54,5 @@ function reservationView($bookings)
 
     require_once "view/template.php";
 
-    renderTemplate($title, $content, $currentNav, $head);
+    renderTemplate($title, $content, $currentNav);
 }
