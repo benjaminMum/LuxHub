@@ -37,3 +37,8 @@ C'est un site web de réservation pour "un petit cinéma" avec base de données 
     ```
 
 7. Ouvrer votre navigateur et tapez dans la barre de recherche localhost:8000
+
+# Librairies (NPM dependencies)
+
+- Jquerry
+- bootstrap
