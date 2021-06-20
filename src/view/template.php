@@ -57,9 +57,11 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                             <li>
                                 <a class="nav-link <?= (@$currentNav == "soon") ? "active" : "" ?>" aria-current="page" href="/soon">Prochainement</a>
                             </li>
-                            <li>
-                                <a class="nav-link <?= (@$currentNav == "myBookings") ? "active" : "" ?>" aria-current="page" href="/myBookings">Mes réservations</a>
-                            </li>
+                            <?php if (!empty($_SESSION)) { ?>
+                                <li>
+                                    <a class="nav-link <?= (@$currentNav == "myBookings") ? "active" : "" ?>" aria-current="page" href="/myBookings">Mes réservations</a>
+                                </li>
+                            <?php } ?>
                         </ul>
                         <div class="col-12 col-md-8 d-flex justify-content-md-end mt-2 mt-md-0 gx-0">
                             <?php if (empty($_SESSION)) { ?>
@@ -67,10 +69,10 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
                                 <a href="/register" class="btn btn-secondary me-2">S'enregister</a>
                             <?php } else { ?>
                                 <a href="/user" class="btn btn-secondary me-2">Votre compte</a>
-                                <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a>
-                                <?php if($_SESSION['type'] == 4) {?>
+                                <?php if ($_SESSION['type'] == 4) { ?>
+                                    <a href="/addMovie" class="btn btn-secondary me-2">Ajouter un film</a>
                                     <a href="/showUsers" class="btn btn-secondary me-2">Utilisateurs</a>
-                                <?php }?>
+                                <?php } ?>
                                 <a href="/logout" class="btn btn-secondary me-2">Se déconnecter</a>
                             <?php } ?>
                         </div>
@@ -89,7 +91,7 @@ function renderTemplate($title = null, $content = null, $currentNav = null, $hea
 
             <div class="d-flex justify-content-center">
                 <div class="text-muted mx-2">
-                    <p>FoMuCo | 2021</p>
+                    <p><a href="/contact" class="text-muted text-decoration-none" style="color: white !important;">Contactez-nous</a> | FoMuCo | 2021</p>
                 </div>
             </div>
 

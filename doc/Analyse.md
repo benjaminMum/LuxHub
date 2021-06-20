@@ -92,6 +92,7 @@ Le projet sera réalisé en 5 sprints. Nous utiliserons une méthode agile donc 
 ### Qui ?
 
 Les premiers testeurs seront les membres de l'équipe. Puis nous demanderons un accès au serveur SwissCenter du CPNV pour pouvoir héberger le site "fonctionnel". Nous essayerons de faire tester le site à une vingtaine de personnes en commençant par nos camarades de classe.
+Malheureusement par manque de temps nous n'avons pas peut faire tester à des personnes externes à notre équipe de développement.
 
 ### Comment ?
 
@@ -133,13 +134,22 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 
 ## Bilan des objectifs
 
-### Atteints
-
 ### Non-atteints
+
+* Il n'y a aucune gestion de prix.
+* Nous ne pouvons pas gérer les salles
+* Nous ne pouvons pas voir les dates disponibles depuis un film mais nous somme redirigé
+* Il n'y a pas de gestions de coupons
 
 ## Bilan des points
 
 ### Positif
+
+* La gestion de travail en équipe
+* La gestion du temps
+* Le travail en agile
+* Utilisation d'IceScrum
+* Utilisation d'une base de données pour un site web
 
 ### Négatif
 
@@ -151,4 +161,17 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 * Le temps que nous avions était assez court par rapport a d'autre projets
 * La conception du MCD puis du MLD n'a pas été très intelligente comme nous avons pu le constatez au cours du projet
 
+### Problèmes restant
+
+* Aucune gestion de prix donc aucun rabais, payement, etc...
+* Nous ne pouvons pas gérer les salles
+* Nous ne pouvons pas voir les dates disponibles depuis un film mais nous somme redirigé sur une page tiers.
+
 ### Suites possibles
+
+* Corriger les bugs restant
+* Mettre en place un/des moyen(s) de payement
+* Utiliser PHPMailer pour les mails a la place de la fonction mail() de php pour optimiser le temps d'éxecution
+* Utiliser un switch a la place des if-else indenté dans le fichier nav.php ligne: 244
+* Split les fonctions de nav.php dans des fichiers controller plus logique tels que la fonction "addMovie"
+* Se protéger contre les attaques XSS et les injections SQL 

@@ -10,3 +10,4 @@ src/view/content/img
 src/view/content/img/thumbnail/*.jpg
 src/view/content/img/original/*.jpg
 
+.vscode/launch.json

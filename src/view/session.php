@@ -21,7 +21,7 @@ function showASession($sessionData)
                     <img src="<?= $sessionData[0]['thumbnails'] ?>" alt="<?= $sessionData[0]['title'] ?>">
                     <br>
                     <strong><small>Durée:</small></strong>
-                    <p><?= $sessionData[0]['duration'] ?></p>
+                    <p><?= $sessionData[0]['duration'] ?> mins</p>
                     <strong> <small>Langue:</small></strong>
                     <p><?= $sessionData[0]['language'] ?></p>
                     <strong><small>Date:</small></strong>
@@ -41,9 +41,19 @@ function showASession($sessionData)
                     </div>
                     <strong><small>Description:</small></strong>
                     <p><?= $sessionData[0]['description'] ?></p>
-                    <form action="/createBooking/<?= $sessionData[0]['session_code'] ?>" method="POST">
-                            <input type="submit" value="Réserver">
-                    </form>
+                    <?php if (!empty($_SESSION)) { ?>
+                        <form action="/createBooking/<?= $sessionData[0]['session_code'] ?>" method="POST">
+                            <input type="submit" value="Réserver" class="btn btn-secondary">
+                        </form>
+                    <?php }
+                    if ($_SESSION['type'] == 4) { ?>
+                        <br>
+                        <form action="/deleteSession/<?= $sessionData[0]['session_code'] ?>" method="POST">
+                            <input type="submit" value="Supprimer" class="btn btn-danger">
+                        </form>
+                    <?php } else { ?>
+                        <a href="/register"><input type="button" value="S'inscrire" class="btn btn-secondary"></a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

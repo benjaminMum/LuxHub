@@ -6,8 +6,6 @@ function showAMovieView($movieData, $movieid)
     $title = "Session";
     ob_start();
 ?>
-
-
     <main>
         <section class="py-3 text-center container">
             <div class="row py-lg-5">
@@ -23,7 +21,7 @@ function showAMovieView($movieData, $movieid)
                     <img src="<?= $movieData[0]['thumbnails'] ?>" alt="<?= $movieData[0]['title'] ?>">
                     <br>
                     <strong><small>Durée:</small></strong>
-                    <p><?= $movieData[0]['duration'] ?></p>
+                    <p><?= $movieData[0]['duration'] ?> mins</p>
                     <strong> <small>Date de sortie:</small></strong>
                     <p><?= $movieData[0]['release_date'] ?></p>
                     <strong><small>Âge légal:</small></strong>
@@ -31,11 +29,11 @@ function showAMovieView($movieData, $movieid)
                 </div>
                 <div class="col-8">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" width="720" height="450" src="https://www.youtube.com/embed/u31qwQUeGuM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" width="720" height="450" src="https://www.youtube.com/embed/<?=$movieData[0]['trailers']?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <strong><small>Description:</small></strong>
                     <p><?= $movieData[0]['description'] ?></p>
-                    <a href="/soon/<?=$movieData[0]['movie_code']?>" class="btn btn-secondary">Réserver</a>
+                    <a href="/soon/<?= $movieData[0]['movie_code'] ?>" class="btn btn-secondary">Réserver</a>
                 </div>
             </div>
         </div>
