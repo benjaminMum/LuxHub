@@ -23,7 +23,7 @@ function addMovieView($err = null)
         <div class="align-content-center">
             <div class="col-lg-12  div-wrapper d-flex justify-content-center ">
                 <div class="col-lg-6 d-flex justify-content-center border pt-3 pb-3 align-content-center">
-                    <form action="/addMovie" method="post" enctype="multipart/form-data">
+                    <form action="/addMovie" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputMovieID">l'EIDR du film</label>
@@ -71,7 +71,7 @@ function addMovieView($err = null)
                             </div>
                             <div class="col-lg-6 col-sm-6">
                                 <label for="inputMovieThumbnail">Image de miniature</label><br>
-                                <input type="file" name="movieThumbnail" id="inputMovieThumbnail" required accept="image/png, image/jpeg">
+                                <input type="file" name="movieThumbnail" id="inputMovieThumbnail" required accept="image/png, image/jpeg, image/gif">
                             </div>
                         </div>
 
