@@ -41,9 +41,13 @@ function showASession($sessionData)
                     </div>
                     <strong><small>Description:</small></strong>
                     <p><?= $sessionData[0]['description'] ?></p>
-                    <form action="/createBooking/<?= $sessionData[0]['session_code'] ?>" method="POST">
-                            <input type="submit" value="Réserver">
-                    </form>
+                    <?php if (!empty($_SESSION)) { ?>
+                        <form action="/createBooking/<?= $sessionData[0]['session_code'] ?>" method="POST">
+                            <input type="submit" value="Réserver" class="btn btn-secondary">
+                        </form>
+                    <?php } else { ?>
+                        <a href="/register"><input type="button" value="S'inscrire" class="btn btn-secondary"></a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
