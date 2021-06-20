@@ -47,6 +47,35 @@ function displayUser()
     }
 }
 
+function showUsers($search=null) {
+    require_once "model/user_manager.php";
+    require_once "view/manage-users.php";
+
+    $types = getAllTypes();
+
+    if(isset($search)) {
+        $getUserData = getUsers($search);
+    } else {
+        $getUserData = getUsers();
+    }
+    if(isset($_SESSION) && $_SESSION['type'] == 4) {
+        getUsersView($getUserData, $types);
+    } else {
+        home();
+    }
+}
+
+function modifyUserType($user, $newType) {
+    require_once "model/user_manager.php";
+    if(modifyUserTypeBD($user, $newType)) {
+        showUsers();
+    } else {
+        $err = "Une erreur est survenue.";
+        showUsers();
+    }
+
+}
+
 function login($userData)
 {
     require_once "model/user_manager.php";

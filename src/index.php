@@ -56,6 +56,14 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         modifyUser($_GET, $_POST);
         break;
 
+    case '/modifyUserType':
+        modifyUserType($_GET['userId'], $_POST['userType']);
+        break;
+
+    case '/showUsers':
+        showUsers($_GET['search']);
+        break;
+
     case '/logout':
         logout();
         break;
