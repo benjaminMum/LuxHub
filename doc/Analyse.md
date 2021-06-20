@@ -151,4 +151,8 @@ Nos plus gros concurrents dans ce domaine en suisse sont [pathé](pathe.ch) et l
 * Le temps que nous avions était assez court par rapport a d'autre projets
 * La conception du MCD puis du MLD n'a pas été très intelligente comme nous avons pu le constatez au cours du projet
 
+### Problèmes restant
+
+* L'upload d'image ne fonctionne pas. L'image n'est pas sauvegardée.
+
 ### Suites possibles
