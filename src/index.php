@@ -29,10 +29,12 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/login':
+        testInput($_POST);
         login($_POST);
         break;
 
     case '/register':
+        testInput($_POST);
         register($_POST);
         break;
 
@@ -45,6 +47,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/addSession':
+        testInput($_POST);
         addSession($_POST);
         break;
 
@@ -53,14 +56,17 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/modifyUser':
+        testInput($_POST);
         modifyUser($_GET, $_POST);
         break;
 
     case '/modifyUserType':
+        testInput($_POST);
         modifyUserType($_GET['userId'], $_POST['userType']);
         break;
 
     case '/showUsers':
+        testInput($_POST);
         showUsers($_GET['search']);
         break;
 
@@ -69,6 +75,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/addMovie':
+        testInput($_POST);
         addMovie(@$_POST, @$_FILES);
         break;
 
@@ -81,6 +88,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
 
     case '/writeBooking':
+        testInput($_POST);
         writeBooking($_POST);
         break;
 
@@ -97,6 +105,7 @@ switch (strtok($_SERVER["REQUEST_URI"], '?')) {
         break;
         
     case '/contact':
+        testInput($_POST);
         contactUs(@$_POST);
         break;
 

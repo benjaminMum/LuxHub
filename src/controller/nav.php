@@ -8,6 +8,18 @@ function home($res = null)
     homeView($movies, $res);
 }
 
+function testInput($inputDatas) {
+    foreach ($inputDatas as $inputData) {
+        $inputData = trim($inputData);
+        $inputData = stripslashes($inputData);
+        $inputData = htmlspecialchars($inputData,ENT_COMPAT,'ISO-8859-1', true);
+        echo $inputData;
+
+
+    }
+    return $inputData;
+}
+
 function modifyUser($code, $modifyData)
 {
     require_once "model/user_manager.php";
